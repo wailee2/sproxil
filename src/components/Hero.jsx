@@ -28,10 +28,6 @@ export default function Hero() {
                 <div className="flex items-center gap-4">
                     {/* primary CTA as a Link (react-router) */}
                     <AnimatedArrowButton label="Get Started" to="#contact" />
-
-
-                    {/* secondary CTA */}
-                    <AnimatedArrowButton label="Documentation" to="/docs" className="opacity-90" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
