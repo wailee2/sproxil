@@ -11,55 +11,41 @@ export default function AnimatedArrowButton({
   children = null,
   ariaLabel = "",
   scrollOffset = 0,
+
+  // NEW props for customization:
+  labelClass = "bg-red-950 text-white",
+  iconCircleBg = "bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400",
+  iconTextColor = "text-red-950",
 }) {
   const outer = `group inline-flex items-center gap-1`.trim();
 
   // animation classes for the inner icon wrapper only
   const iconAnim = `transform transition-all duration-500 ease-in-out`;
 
-  // ORIGINAL diagonal arrow: stays centered initially; on group-hover moves up-right and fades out
-  const originalIconCls = `${iconAnim}  opacity-100 group-hover:${exitTranslate} group-hover:-translate-y-6 group-hover:translate-x-6 -rotate-45 group-hover:opacity-0`;
-
-  // INCOMING arrow: starts off to the left & tilted; on hover slides to center and rotates to 0deg and becomes visible
+  const originalIconCls = `${iconAnim} opacity-100 group-hover:${exitTranslate} group-hover:-translate-y-6 group-hover:translate-x-6 -rotate-45 group-hover:opacity-0`;
   const incomingIconCls = `${iconAnim} ${incomingFrom} opacity-0 group-hover:translate-x-0 group-hover:rotate-0 group-hover:opacity-100 -translate-x-6 -rotate-12`;
 
-  // Smooth-scroll handler for hash links (#id)
   function handleHashClick(e, hash) {
-    // allow regular onClick behavior if user provided and wants it (still call scroll)
     if (e) e.preventDefault();
-
     const id = hash.startsWith("#") ? hash.slice(1) : hash;
-    // try by id first, then by name attribute
     const target =
       document.getElementById(id) || document.querySelector(`[name="${id}"]`);
-
     if (!target) {
-      // fallback to normal anchor behavior if element not found
       window.location.hash = hash;
       return;
     }
-
-    // compute target position with optional offset (for fixed headers)
     const targetY = target.getBoundingClientRect().top + window.pageYOffset - (scrollOffset || 0);
-
-    window.scrollTo({
-      top: Math.max(0, targetY),
-      behavior: "smooth",
-    });
-
-    // if the consumer also provided an onClick prop, call it
+    window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
     if (typeof onClick === "function") onClick();
   }
-  
+
   const content = (
     <>
-      {/* optional label/button (left). It reacts to the group's hover state. */}
       {label && !children && (
         <button
           type={to ? undefined : "button"}
           className={
-            "inline-flex items-center rounded-full bg-red-950 px-5.5 py-3.5 text-lg  text-white shadow transition-transform duration-200" +
-            " cursor-pointer"
+            `inline-flex items-center rounded-full ${labelClass} px-5.5 py-3.5 text-md lg:text-lg shadow transition-transform duration-200 cursor-pointer`
           }
           onClick={(e) => {
             if (to && typeof to === "string" && to.startsWith("#")) {
@@ -76,21 +62,19 @@ export default function AnimatedArrowButton({
 
       {children}
 
-      {/* the single static circle with overflow-hidden */}
       <div
-        className='p-7 rounded-full text-[1.7rem] bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-red-950 shadow-md  flex items-center justify-center relative overflow-hidden' aria-hidden={false}
+        className={`p-7 rounded-full text-[1.7rem] ${iconCircleBg} ${iconTextColor} shadow-md flex items-center justify-center relative overflow-hidden`}
+        aria-hidden={false}
       >
-        {/* original arrow — inner wrapper animates */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
           <span className={originalIconCls}>
-            <IoArrowForward className="text-[1.7rem] text-red-950" />
+            <IoArrowForward className={`text-[1.7rem]`} />
           </span>
         </div>
 
-        {/* incoming arrow — layered above original */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span className={incomingIconCls}>
-            <IoArrowForward className="text-[1.7rem] text-red-950" />
+            <IoArrowForward className={`text-[1.7rem]`} />
           </span>
         </div>
       </div>
@@ -124,10 +108,10 @@ export default function AnimatedArrowButton({
     </button>
   );
 }
-
-/*
-Usage:
-<AnimatedArrowButton label="Get Started" to="/signup" />
-*/
-
-//bg-[radial-gradient(circle_at_center,_#dc2626,_#fb923c,_#f59e0b)]
+/*<AnimatedArrowButton
+  label="Try now"
+  to="/signup"
+  labelBgClass="bg-sky-700"
+  circleBgClass="bg-gradient-to-r from-sky-500 via-indigo-500 to-indigo-700"
+  iconColorClass="text-white"
+/>*/

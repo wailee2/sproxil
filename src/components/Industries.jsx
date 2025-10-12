@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
+import AnimatedArrowButton from './ui/AnimatedArrowButton';
+
 import { BiSolidDonateHeart } from "react-icons/bi";
-import { FaSuitcaseMedical } from "react-icons/fa6";
 import { LuBriefcaseMedical } from "react-icons/lu";
-import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
 import { RiDrinks2Line } from "react-icons/ri";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { FaCarAlt } from "react-icons/fa";
@@ -92,7 +92,7 @@ export default function Industries() {
     };
   }, []);
 
-  const mx = `${6 * progress}%`;
+  const mx = `${8 * progress}%`;
   return (
     <section
       id="industries"
@@ -102,13 +102,13 @@ export default function Industries() {
         marginRight: mx,
         // transition: "margin 120ms linear",
       }}
-      className="bg-red-900 section-x-padding py-12 rounded-md"
+      className="bg-red-900 section-x-padding overflow-x-hidden py-12 lg:py-20 rounded-md"
     >
       <div className="mx-auto">
         <div className="section-title-div">
           <span className=" section-title">Industries we serve</span>
         </div>
-        <h2 className="max-w-[95%] sm:max-w-[70%] text-white">Our solutions are tailored to the unique needs of our customers.</h2>
+        <h2 className="max-w-lg text-white">Our solutions are tailored to the unique needs of our customers.</h2>
 
         <div className="mt-7 md:mt-10 lg:mt-12 grid gap-5 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
@@ -132,6 +132,14 @@ export default function Industries() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="mt-10">
+          <AnimatedArrowButton
+            label="Learn more about our solutions"
+            to="#contact"
+            labelClass="bg-white text-black"
+            iconTextColor="text-red-950"
+          />
         </div>
       </div>
     </section>
