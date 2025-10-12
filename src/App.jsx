@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Industries from './components/Industries';
+import Services from './components/Services';
 import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -14,6 +15,7 @@ export default function App() {
       <main className=" flex-grow">
         <Hero />
         <Industries />
+        <Services />
         <Testimonial />
         <Contact />
       </main>

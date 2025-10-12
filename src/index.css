@@ -4,7 +4,7 @@
 h1, h2, h3, h4, h5, h6{
     text-wrap: balance;
     font-weight: 600;
-    line-height: 100%;
+    line-height: 101%;
     letter-spacing: -.0475em;
 }
 
@@ -34,8 +34,8 @@ p {
 }
 
 .section-x-padding{
-    padding-right: 6%;
-    padding-left: 6%;
+    padding-right: 5%;
+    padding-left: 5%;
 }
 
 .section-title-div{
@@ -47,7 +47,6 @@ p {
     letter-spacing: .0475em;
     font-weight: 600;
     font-size: .75rem;
-    color: #929292;
 }
 
 @media (min-width: 640px) {

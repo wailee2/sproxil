@@ -106,7 +106,7 @@ export default function Industries() {
     >
       <div className="mx-auto">
         <div className="section-title-div">
-          <span className=" section-title">Industries we serve</span>
+          <span className="text-[#929292] section-title">Industries we serve</span>
         </div>
         <h2 className="max-w-lg text-white">Our solutions are tailored to the unique needs of our customers.</h2>
 
