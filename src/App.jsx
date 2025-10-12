@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-800">
       <Navbar />
-      <main className="flex-grow">
+      <main className="px-[4%] 2xl:px-[6.5%] flex-grow">
         <Hero />
         <Industries />
         <Testimonial />
