@@ -10,8 +10,8 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-black sansation-regular">
-      <Navbar />
-      <main className="px-[4%] 2xl:px-[6.5%] flex-grow">
+      {/*<Navbar />*/}
+      <main className=" flex-grow">
         <Hero />
         <Industries />
         <Testimonial />

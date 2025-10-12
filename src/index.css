@@ -4,13 +4,18 @@
 h1, h2, h3, h4, h5, h6{
     text-wrap: balance;
     font-weight: 600;
-    line-height: 110%;
+    line-height: 100%;
     letter-spacing: -.0475em;
 }
 
 h1{
     font-size: clamp(3rem, 1.5rem + 6.0714vw, 7.5rem) ;
 }
+
+h2{
+    font-size: clamp(1.8rem, 1rem + 3vw, 3rem) ;
+}
+
 
 .text-fluid-body {
     font-size: clamp(1rem, .8571rem + .7143vi, 1.5rem);
@@ -19,10 +24,53 @@ h1{
     text-wrap: balance;
 }
 
+.body-text {
+    font-size: 16px;
+}
+
 p {
     text-wrap: pretty;
     line-height: 145%;
 }
+
+.section-x-padding{
+    padding-right: 6%;
+    padding-left: 6%;
+}
+
+.section-title-div{
+    padding-bottom: 1rem;
+}
+
+.section-title{
+    text-transform: uppercase;
+    letter-spacing: .0475em;
+    font-weight: 600;
+    font-size: .75rem;
+    color: #929292;
+}
+
+@media (min-width: 640px) {
+    
+}
+
+@media (min-width:1024px){
+    .section-title{
+        font-size: 1rem;
+    }
+    .body-text {
+    font-size: 18px;
+}
+}
+
+@media (min-width: 1440px) {
+    .body-text {
+        font-size: 20px;
+    }
+}
+
+
+
 
 
 .sansation-light {
