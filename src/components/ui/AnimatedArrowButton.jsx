@@ -58,7 +58,7 @@ export default function AnimatedArrowButton({
         <button
           type={to ? undefined : "button"}
           className={
-            "inline-flex items-center rounded-full bg-red-950 px-5.5 py-3.5 text-lg font-semibold text-white shadow transition-transform duration-200" +
+            "inline-flex items-center rounded-full bg-red-950 px-5.5 py-3.5 text-lg  text-white shadow transition-transform duration-200" +
             " cursor-pointer"
           }
           onClick={(e) => {

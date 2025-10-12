@@ -1,2 +1,62 @@
-
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+h1, h2, h3, h4, h5, h6{
+    text-wrap: balance;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -.0475em;
+}
+
+h1{
+    font-size: clamp(3rem, 1.5rem + 6.0714vw, 7.5rem) ;
+}
+
+.text-fluid-body {
+    font-size: clamp(1rem, .8571rem + .7143vi, 1.5rem);
+}
+.text-balance {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+    line-height: 145%;
+}
+
+
+.sansation-light {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sansation-light-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.sansation-regular-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.sansation-bold-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
