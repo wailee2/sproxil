@@ -12,22 +12,11 @@ export default function Hero() {
                 <h1 className="text-8xl 2xl:text-9xl max-w-[75%] font-semibold tracking-tight text-black">
                 We help brands build trust and loyalty.
                 </h1>
-                <p className="mt-6 text-lg text-slate-600 max-w-xl">Secure product verification, protect supply chains, and turn each mobile scan into a trusted connection between your brand and customers.m</p>
-
-                <Link
-                    className="flex gap-2"
-                    to="#"
-                >
-                    <button className="inline-flex items-center rounded-full bg-red-950 px-5.5 py-3.5 text-lg font-semibold text-white shadow">Get Started</button>
-                    <button className="p-4 rounded-full text-[1.7rem] bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-red-950 shadow-md hover:scale-105 transition-transform duration-200">
-                        <IoArrowForward />
-                    </button>
-
-                </Link>
-
-                <div className="flex items-center gap-4">
-                    {/* primary CTA as a Link (react-router) */}
-                    <AnimatedArrowButton label="Get Started" to="#contact" />
+                <div className='flex justify-between items-center'>
+                    <div className="flex items-center gap-4">
+                        <AnimatedArrowButton label="Get Started" to="#contact" />
+                    </div>
+                    <p className=" text-xl text-black max-w-md">Secure product verification, protect supply chains, and turn each mobile scan into a trusted connection between your brand and customers.</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">

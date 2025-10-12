@@ -6,24 +6,22 @@ export default function AnimatedArrowButton({
   label = null,
   to = null,
   onClick = undefined,
-  durationClass = "duration-500",
-  exitTranslate = "translate-x-6 -translate-y-6",
-  incomingFrom = "-translate-x-6 -rotate-12",
-  className = "",
+  exitTranslate = "",
+  incomingFrom = "",
   children = null,
   ariaLabel = "",
-    scrollOffset = 0,
+  scrollOffset = 0,
 }) {
-  const outer = `group inline-flex items-center gap-3 ${className}`.trim();
+  const outer = `group inline-flex items-center gap-1`.trim();
 
   // animation classes for the inner icon wrapper only
-  const iconAnim = `transform transition-all ${durationClass} ease-in-out`;
+  const iconAnim = `transform transition-all duration-500 ease-in-out`;
 
   // ORIGINAL diagonal arrow: stays centered initially; on group-hover moves up-right and fades out
-  const originalIconCls = `${iconAnim} -rotate-45 opacity-100 group-hover:${exitTranslate} group-hover:opacity-0`;
+  const originalIconCls = `${iconAnim}  opacity-100 group-hover:${exitTranslate} group-hover:-translate-y-6 group-hover:translate-x-6 -rotate-45 group-hover:opacity-0`;
 
   // INCOMING arrow: starts off to the left & tilted; on hover slides to center and rotates to 0deg and becomes visible
-  const incomingIconCls = `${iconAnim} ${incomingFrom} opacity-0 group-hover:translate-x-0 group-hover:rotate-0 group-hover:opacity-100`;
+  const incomingIconCls = `${iconAnim} ${incomingFrom} opacity-0 group-hover:translate-x-0 group-hover:rotate-0 group-hover:opacity-100 -translate-x-6 -rotate-12`;
 
   // Smooth-scroll handler for hash links (#id)
   function handleHashClick(e, hash) {
@@ -79,9 +77,11 @@ export default function AnimatedArrowButton({
       {children}
 
       {/* the single static circle with overflow-hidden */}
-      <div className='p-7 rounded-full text-[1.7rem] bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-red-950 shadow-md  flex items-center justify-center relative overflow-hidden' aria-hidden={false}>
+      <div
+        className='p-7 rounded-full text-[1.7rem] bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-red-950 shadow-md  flex items-center justify-center relative overflow-hidden' aria-hidden={false}
+      >
         {/* original arrow — inner wrapper animates */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-12">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
           <span className={originalIconCls}>
             <IoArrowForward className="text-[1.7rem] text-red-950" />
           </span>
