@@ -39,12 +39,15 @@ export default function Services() {
           {services.map((s) => (
             <div className='flex justify-between'>
               <div></div>
-              <div key={s.name} className=" xl:w-[85%] py-6 flex flex-wrap gap-5 md:gap-20 items-center justify-between border-b-1 border-gray-200">
+              <div
+                key={s.name}
+                className="space-y-6 md:space-y-0 xl:w-[65%] 2xl:w-[55%] py-6 md:flex md:gap-x-20 items-center justify-between border-b-1 border-gray-200"
+              >
                 <div className="flex items-center gap-3">
-                  <div className='w-10 h-10 rounded-full bg-gradient-to-r from-red-600  to-white'></div>
+                  <div className='w-10 h-10 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400'></div>
                   <h3 className="font-semibold text-2xl uppercase">{s.name}</h3>
                 </div>
-                <p className="text-lg text-[#484648] md:max-w-sm">{s.desc}</p>
+                <p className="text-lg text-[#484648] md:max-w-sm xl:max-w-md">{s.desc}</p>
               </div>
             </div>
           ))}
