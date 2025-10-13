@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React/*, { useState }*/ from 'react';
+import AnimatedArrowButton from './ui/AnimatedArrowButton';
 
 export default function Contact() {
+  {/** 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState(null);
 
@@ -25,14 +27,28 @@ export default function Contact() {
       console.error(err);
       setStatus('error');
     }
-  }
+  }*/}
 
   return (
-    <section id="contact" className="bg-white py-16">
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <h2 className="text-2xl font-semibold text-slate-900">Contact us</h2>
-        <p className="mt-2 text-slate-600">Ready to secure your brand? Send us a message and we’ll get back within 1 business day.</p>
+    <section
+      id="contact"
+      className="py-16 section-l-p section-r-p overflow-x-hidden "
+    >
+      <div className="mx-auto px-8 md:px-10 lg:px-20 py-30 xl:py-56 rounded-xl bg-red-900">
+        <h1 className="lg:max-w-[85%] text-[#f5f9f5] sansation-bold">
+          Ready to secure your brand?
+        </h1>
 
+        <div className="mt-10 lg:mt-20">
+          <AnimatedArrowButton
+            label="Book an Appointment"
+            to="/form"
+            labelClass="bg-[#f5f9f5] text-[#0a0f0a]"
+            iconTextColor="text-red-950"
+          />
+        </div>
+
+        {/** 
         <form onSubmit={handleSubmit} className="mt-8 grid gap-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <label className="block">
@@ -56,12 +72,8 @@ export default function Contact() {
             {status === 'success' && <span className="text-sm text-green-600">Message sent — thanks!</span>}
             {status === 'error' && <span className="text-sm text-red-600">Failed to send. Try again later.</span>}
           </div>
-        </form>
+        </form>*/}
 
-        <div className="mt-8 text-sm text-slate-600">
-          <p><strong>Email:</strong> hello@maiway.example</p>
-          <p className="mt-1"><strong>Address:</strong> Lagos, Nigeria</p>
-        </div>
       </div>
     </section>
   );

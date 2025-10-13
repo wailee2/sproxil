@@ -21,7 +21,7 @@ const quotes = [
   {
     name: 'Diageo',
     quote:
-      'During this campaign 2C Diageo was able to identify through the Sproxil platform 15 2C000 influencers in the specific geographic area. As a result of the promotion Diageo saw growth in its market share in one of the target states by 2.5 25.',
+      'During this campaign 2C Diageo was able to identify through the Sproxil platform 15,000 influencers in the specific geographic area. As a result of the promotion Diageo saw growth in its market share in one of the target states by 2025.',
     image:
       'public/diageo.png',
   },
@@ -57,7 +57,7 @@ const quotes = [
 
 export default function Testimonial() {
   return (
-    <section id="testimonials" className="py-16 pl-[4%] 2xl:pl-[5.5%] overflow-x-hidden">
+    <section id="testimonials" className="py-16 section-l-p overflow-x-hidden">
       <div className="mx-auto overflow-hidden lg:flex justify-between space-y-10">
         <div className=''>
           <div className="section-title-div">
@@ -122,7 +122,7 @@ export default function Testimonial() {
                   <div className="flex items-center gap-4">
                     <img
                       src={q.image}
-                      alt={`${q.name} avatar`}
+                      alt={`${q.name} logo`}
                       className="w-14 h-14 lg:w-16 lg:h-16 rounded-full object-contain p-1 bg-white"
                       loading="lazy"
                     />

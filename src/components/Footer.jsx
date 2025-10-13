@@ -1,19 +1,46 @@
 import React from 'react';
+import AnimatedArrowButton from './ui/AnimatedArrowButton';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+    <footer className="section-l-p section-r-p overflow-x-hidden bg-red-900 rounded-t-xl py-16">
+      <div className="mx-auto md:px-[3%]">
+        <div className=''>
           <div>
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">M</div>
-              <div>
-                <div className="font-semibold text-white">MaiWay</div>
-                <div className="text-xs">Mobile trust & brand protection</div>
-              </div>
-            </div>
+            <img
+              src="public/sproxil.png" 
+              alt="" 
+              className='hidden'
+            />
           </div>
+          <span className='font-semibold text-3xl lg:text-4xl text-white'>SPROXIL</span>
+          <div className="mt-6 lg:mt-8">
+            <AnimatedArrowButton
+              label="Book an Appointment"
+              to="#contact"
+              labelClass="bg-[#f5f9f5] text-[#0a0f0a]"
+              iconTextColor="text-red-950"
+            />
+          </div>
+        </div>
+
+        <div>
+          <div><Link to="/">Home</Link></div>
+          <div><a href="#">Program</a></div>
+          <div><a href="#">About</a></div>
+          <div><a href="#">Contact</a></div>
+        </div>
+
+        <div>
+          <span>Our Socials</span>
+          <div><a href="#">Facebook</a></div>
+          <div><a href="#">X</a></div>
+          <div><a href="#">Linkedin</a></div>
+          <div><a href="#">Instagram</a></div>
+        </div>
+
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
 
           <div className="mt-4 flex gap-6">
             <a href="#" className="text-sm hover:text-white">Privacy</a>

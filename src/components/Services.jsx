@@ -27,7 +27,7 @@ export default function Services() {
   return (
     <section
       id="testimonials"
-      className="py-16 section-x-padding overflow-x-hidden"
+      className="py-16 section-l-p section-r-p overflow-x-hidden"
     >
       <div className="mx-auto">
         <div className="section-title-div">

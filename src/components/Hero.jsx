@@ -3,14 +3,14 @@ import AnimatedArrowButton from './ui/AnimatedArrowButton';
 
 export default function Hero() {
     return (
-        <section className=" section-x-padding overflow-x-hidden">
+        <section className=" section-l-p section-r-p overflow-x-hidden">
             <div className="mx-auto py-15 lg:py-20">
                 <p className="mb-3 inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">For Donors • Pharma • FMCG</p>
                 <h1 className="lg:max-w-[85%] text-black sansation-bold">
                     We <span className="sansation-bold-italic">help</span> brands build trust and loyalty.
                 </h1>
                 <div className='flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center mt-7.5 lg:mt-9 gap-4'>
-                    <div className="flex items-center gap-4">
+                    <div className="">
                         <AnimatedArrowButton label="Get Started" to="#contact" />
                     </div>
                     <p className="text-fluid-body text-balance  max-w-lg">Secure product verification, protect supply chains, and turn each mobile scan into a trusted connection between your brand and customers.</p>

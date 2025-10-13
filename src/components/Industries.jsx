@@ -102,7 +102,7 @@ export default function Industries() {
         marginRight: mx,
         // transition: "margin 120ms linear",
       }}
-      className="bg-red-900 section-x-padding overflow-x-hidden py-12 lg:py-20 rounded-md"
+      className="bg-red-900 section-l-p section-r-p overflow-x-hidden py-12 lg:py-20 rounded-md"
     >
       <div className="mx-auto">
         <div className="section-title-div">
@@ -137,7 +137,7 @@ export default function Industries() {
           <AnimatedArrowButton
             label="Learn more about our solutions"
             to="#contact"
-            labelClass="bg-white text-black"
+            labelClass="bg-[#f5f9f5] text-[#0a0f0a]"
             iconTextColor="text-red-950"
           />
         </div>
