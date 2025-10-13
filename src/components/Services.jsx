@@ -1,24 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const services = [
   { name: 'SPROXIL SURVEY',
-    title: '',
+    slug: "sproxil-survey",
     desc: 'We capture real-time opinions from individuals and customers, even in remote areas. Transforming data points into powerful stories through fast responses, wide reach, and advanced real-time analytics.' 
   },
   { name: 'SPROXIL CHAMPION',
-    title: '',
+    slug: "sproxil-champion",
     desc: 'Sproxil Champion connects the brand with its consumers by ensuring consumer gratifying reward programs that spur consumers to promote a brand and stay loyal. By championing a brand, consumers can create more visibility for the brand.' 
   },
   { name: 'SPROXIL INFORMER',
-    title: '',
+    slug: "sproxil-informer",
     desc: 'A GS1 certified solution that secures a brand by providing robust tracking solutions that ensure a secure supply chain and end-to-end visibility. By tracing all activities using Sproxil Informer, a brand can maintain profits while sieving out fraudulent attempts' 
   },
   { name: 'SPROXIL ALLY',
-    title: '',
+    slug: "sproxil-ally",
     desc: 'Sproxil Ally provides a foolproof database of the company’s trade partners. Trade channels earn rewards for promoting a brand while the manufacturer is updated with partners’ progress and keeps them informed on new information.' 
   },
   { name: 'SPROXIL DEFENDER',
-    title: '',
+    slug: "sproxil-defender",
     desc: 'Sproxil Defender empowers consumers to purchase only anti-counterfeit products. By working closely with the manufacturer, products carry a unique code created by Sproxil to defend the brand from counterfeit attacks and trace counterfeit activities.'
   },
 ];
@@ -39,7 +40,8 @@ export default function Services() {
           {services.map((s) => (
             <div className='flex justify-between'>
               <div></div>
-              <div
+              <Link
+                to={`/${s.slug}`}
                 key={s.name}
                 className="space-y-6 md:space-y-0 xl:w-[65%] 2xl:w-[55%] py-6 md:flex md:gap-x-20 items-center justify-between border-b-1 border-gray-200"
               >
@@ -48,7 +50,7 @@ export default function Services() {
                   <h3 className="font-semibold text-2xl uppercase">{s.name}</h3>
                 </div>
                 <p className="text-lg text-[#484648] md:max-w-sm xl:max-w-md">{s.desc}</p>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

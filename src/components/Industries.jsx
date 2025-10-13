@@ -97,14 +97,20 @@ export default function Industries() {
     <section
       id="industries"
       ref={ref}
-      style={{
-        marginLeft: mx,
-        marginRight: mx,
-        // transition: "margin 120ms linear",
-      }}
-      className="bg-red-900 section-l-p section-r-p overflow-x-hidden py-12 lg:py-20 rounded-md"
+      style={{ marginLeft: mx, marginRight: mx, /*transition: "margin 120ms linear",*/}}
+      className="relative overflow-hidden from-[#250000] via-[#3a0000] to-[#250000] bg-[#310000] bg-gradient-to-br section-l-p section-r-p overflow-x-hidden py-12 lg:py-20 rounded-xl"
     >
-      <div className="mx-auto">
+       {/* corner glows (pointer-events-none so they don't intercept clicks) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none from-yellow-600 via-orange-500 to-orange-400 bg-gradient-to-tl absolute -top-36 -right-16 lg:-right-36 w-100 h-100 lg:w-130 lg:h-110 rounded-full blur-3xl opacity-55"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none from-yellow-600 via-orange-500 to-orange-400 bg-gradient-to-tl absolute -bottom-70 -right-16 lg:right-15 w-120 h-120 lg:w-130 lg:h-110 rounded-full blur-3xl opacity-35"
+      />
+      
+      <div className="mx-auto relative z-10">
         <div className="section-title-div">
           <span className="text-[#929292] section-title">Industries we serve</span>
         </div>

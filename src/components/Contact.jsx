@@ -39,7 +39,7 @@ export default function Contact() {
           Ready to secure your brand?
         </h1>
 
-        <div className="mt-10 lg:mt-20">
+        <div className="mt-10 lg:mt-12">
           <AnimatedArrowButton
             label="Book an Appointment"
             to="/form"

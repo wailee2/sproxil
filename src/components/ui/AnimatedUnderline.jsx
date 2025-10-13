@@ -96,4 +96,14 @@ Notes & tips:
  - If you want the underline to be a fixed color from Tailwind classes instead of `color` prop, set color to a CSS color string, e.g. '#16a34a' or 'rgba(0,0,0,0.8)'.
  - The component is keyboard-accessible: focus triggers the same enter animation.
  - If you want the underline to be centered under the text, reduce `paddingBottom` or style the wrapper externally.
+
+ Usage
+ <AnimatedUnderline
+    as="a" href="/about"
+    color="#ffffff"
+    className='footer-link'
+>
+    About
+</AnimatedUnderline>
 */
+

@@ -63,7 +63,7 @@ export default function AnimatedArrowButton({
       {children}
 
       <div
-        className={`p-7.5 rounded-full text-[1.7rem] ${iconCircleBg} ${iconTextColor} shadow-md flex items-center justify-center relative overflow-hidden`}
+        className={`p-7 lg:p-7.5 rounded-full text-[1.7rem] ${iconCircleBg} ${iconTextColor} shadow-md flex items-center justify-center relative overflow-hidden`}
         aria-hidden={false}
       >
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">

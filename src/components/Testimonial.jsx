@@ -21,7 +21,7 @@ const quotes = [
   {
     name: 'Diageo',
     quote:
-      'During this campaign 2C Diageo was able to identify through the Sproxil platform 15,000 influencers in the specific geographic area. As a result of the promotion Diageo saw growth in its market share in one of the target states by 2025.',
+      'During this campaign, Diageo was able to identify through the Sproxil platform 15,000 influencers in the specific geographic area. As a result of the promotion Diageo saw growth in its market share in one of the target states by 2025.',
     image:
       'public/diageo.png',
   },
