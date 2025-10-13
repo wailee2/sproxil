@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimatedArrowButton from './ui/AnimatedArrowButton';
+import AnimatedUnderline from './ui/AnimatedUnderline';
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -34,6 +35,8 @@ export default function Footer() {
 
         <div>
           <span>Our Socials</span>
+          <AnimatedUnderline as="a" href="/about" color="#16a34a" className='bg-pink-600 text-white'>Aboutmm</AnimatedUnderline>
+          <AnimatedUnderline as="a" href="/about" color="#ffffff" className='bg-pink-600 text-white'>Aboutmm</AnimatedUnderline>
           <div><a href="#">Facebook</a></div>
           <div><a href="#">X</a></div>
           <div><a href="#">Linkedin</a></div>
