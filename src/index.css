@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import "tailwindcss";
 
 h1, h2, h3, h4, h5, h6{
     text-wrap: balance;
@@ -32,6 +32,17 @@ h2{
 p {
     text-wrap: pretty;
     line-height: 145%;
+}
+
+.section-bg{
+    background: #240600;
+    background: linear-gradient(90deg, rgba(36, 6, 0, 1) 0%, rgba(61, 6, 6, 1) 35%);
+}
+
+.gradient-bg{
+    background: #c20808;
+    background: linear-gradient(90deg, rgba(194, 8, 8, 1) 0%, rgba(255, 132, 0, 1) 88%, rgba(255, 229, 0, 1) 100%);
+    pointer-events: none;
 }
 
 .section-l-p{
@@ -78,46 +89,6 @@ p {
     object-fit: cover;
 }
 
-/* in your component CSS file or a <style> tag */
-.section-with-corners{
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem; /* match rounded-xl */
-}
-
-/* before = top-left soft glow */
-.section-with-corners::before {
-  content: "";
-  position: absolute;
-  width: 18rem;
-  height: 18rem;
-  top: -3rem;
-  left: -3rem;
-  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), rgba(255,59,65,0.06) 30%, transparent 55%);
-  filter: blur(40px);
-  opacity: .28;
-  pointer-events: none;
-  transform: translateZ(0);
-}
-
-/* after = bottom-right soft glow */
-.section-with-corners::after {
-  content: "";
-  position: absolute;
-  width: 22rem;
-  height: 22rem;
-  bottom: -4rem;
-  right: -3rem;
-  background: radial-gradient(circle at 80% 80%, rgba(0,0,0,0.12), rgba(183,28,28,0.06) 25%, transparent 55%);
-  filter: blur(44px);
-  opacity: .22;
-  pointer-events: none;
-  transform: translateZ(0);
-}
-
-
-@keyframes slow-pan { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}
-  }
 
 @media (min-width: 640px) {
     .section-l-p{
@@ -126,12 +97,12 @@ p {
     .section-r-p{
         padding-right: 4%;
     }
-}
-
-@media (min-width:1024px){
     .section-title{
         font-size: 1rem;
     }
+}
+
+@media (min-width:1024px){
     .body-text {
         font-size: 18px;
     }

@@ -9,49 +9,49 @@ const quotes = [
     quote:
       'We now have deep visibility into our customer experiences and what they think about our products and services not just at our stations but also our depo. This will greatly impact our business intelligence for 2025.',
     image:
-      'public/rainoil.png',
+      '/rainoil.png',
   },
   {
     name: 'WWCVL',
     quote:
       'We have been using Sproxil for over five years now. We are confident in their solution and include them in our marketing campaigns and brand protection efforts.',
     image:
-      'public/wwcvl.png',
+      '/wwcvl.png',
   },
   {
     name: 'Diageo',
     quote:
       'During this campaign, Diageo was able to identify through the Sproxil platform 15,000 influencers in the specific geographic area. As a result of the promotion Diageo saw growth in its market share in one of the target states by 2025.',
     image:
-      'public/diageo.png',
+      '/diageo.png',
   },
   {
     name: 'Bliss GVS',
     quote:
       ' The response from consumers was enthusiastic. Thousands of calls were made to the help desk, some of which helped us identify counterfeit Ampiclox blisters.',
     image:
-      'public/gsk_logo.jpg',
+      '/gsk_logo.jpg',
   },
   {
     name: 'Juanco',
     quote:
       'When Juanco learned that their products were being counterfeited. Sproxil mobile phone-based solution helped us quickly protect over 4000 farmers.',
     image:
-      'public/juanco.jpg',
+      '/juanco.jpg',
   },
   {
     name: 'Saint Gobain',
     quote:
       ' With Ally, we have been able to reach more contractors, provide new leads and better Saint-Gobain contact with contractors',
     image:
-      'public/saint.png',
+      '/saint.png',
   },
   {
     name: 'Barcardi',
     quote:
       ' We met our goal to increase cocktail orders by 300% and connect directly with thousands of bartenders.',
     image:
-      'public/bacardi.jpg',
+      '/bacardi.jpg',
   },
 ]
 
@@ -64,7 +64,8 @@ export default function Testimonial() {
             <span className="text-[#4c4848] section-title">Testimonials</span>
           </div>
 
-          <h2 className="max-w-2xl text-black">Hear from our customers Hear from our customers Hear from our customers Hear from our customers</h2>
+          <h2 className="max-w-2xl text-black">Don't take our word for it!</h2>
+          <h2 className="max-w-2xl text-black"> Hear it from our customers.</h2>
         </div>
 
         {/* Static grid of testimonial cards (responsive). 

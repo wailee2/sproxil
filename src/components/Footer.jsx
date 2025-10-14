@@ -5,18 +5,22 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="section-l-p section-r-p overflow-x-hidden bg-red-900 rounded-t-xl pt-16 pb-7">
-      <div className="mx-auto px-1.5 md:px-[2%] ">
+    <footer className="section-l-p section-r-p section-bg rounded-t-xl pt-16 pb-7 relative overflow-hidden ">
+      <div
+        aria-hidden="true"
+        className="gradient-bg rotate-45 absolute -bottom-50 left-[15%] sm:left-[30%] lg:left-[35%] 2xl:left-[45%]  w-80 h-80 lg:w-100 lg:h-100 blur-2xl opacity-75"
+      />
+      <div className="mx-auto px-1.5 md:px-[2%] relative z-10">
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-12 lg:gap-x-12'>
           <div className=' sm:col-span-2 md:col-span-6'>
             <div>
               <img
-                src="public/sproxil.png" 
+                src="/sproxil.png" 
                 alt="" 
                 className='hidden'
               />
             </div>
-            <span className='font-semibold text-3xl lg:text-4xl text-white'>SPROXIL</span>
+            <span className='font-semibold text-3xl lg:text-4xl text-white'>SPROXIL •</span>
             <div className="mt-5 lg:mt-6">
               <AnimatedArrowButton
                 label="Reach out to us"
@@ -68,7 +72,7 @@ export default function Footer() {
             <span className='text-[#ecefec] text-[16px] text-lg font-semibold'>Our Socials</span>
             <div className='footer-social-div'>
               <img
-                src="public/gsk_logo.jpg"
+                src="/gsk_logo.jpg"
                 alt="logo"
                 className='footer-social-img'
               />
@@ -82,7 +86,7 @@ export default function Footer() {
             </div>
             <div className='footer-social-div'>
               <img
-                src="public/gsk_logo.jpg"
+                src="/gsk_logo.jpg"
                 alt="logo"
                 className='footer-social-img'
               />
@@ -96,7 +100,7 @@ export default function Footer() {
             </div>
             <div className='footer-social-div'>
               <img
-                src="public/gsk_logo.jpg"
+                src="/gsk_logo.jpg"
                 alt="logo"
                 className='footer-social-img'
               />
@@ -110,7 +114,7 @@ export default function Footer() {
             </div>
             <div className='footer-social-div'>
               <img
-                src="public/gsk_logo.jpg"
+                src="/gsk_logo.jpg"
                 alt="logo"
                 className='footer-social-img'
               />

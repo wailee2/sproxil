@@ -28,9 +28,13 @@ export default function Services() {
   return (
     <section
       id="testimonials"
-      className="py-16 section-l-p section-r-p overflow-x-hidden"
+      className="py-16 section-l-p section-r-p relative"
     >
-      <div className="mx-auto">
+      <div
+        aria-hidden="true"
+        className="gradient-bg absolute -bottom-20 -left-60 w-80 h-95 md:w-120 md:h-135 rounded-full blur-3xl opacity-30 md:opacity-35"
+      />
+      <div className="mx-auto relative z-10">
         <div className="section-title-div">
           <span className="text-[#4c4848] section-title">Our Core Services</span>
         </div>

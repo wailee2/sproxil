@@ -92,60 +92,69 @@ export default function Industries() {
     };
   }, []);
 
-  const mx = `${8 * progress}%`;
+  const mx = `${6 * progress}%`;
   return (
     <section
+      className="relative"
       id="industries"
-      ref={ref}
-      style={{ marginLeft: mx, marginRight: mx, /*transition: "margin 120ms linear",*/}}
-      className="relative overflow-hidden from-[#250000] via-[#3a0000] to-[#250000] bg-[#310000] bg-gradient-to-br section-l-p section-r-p overflow-x-hidden py-12 lg:py-20 rounded-xl"
     >
-       {/* corner glows (pointer-events-none so they don't intercept clicks) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none from-yellow-600 via-orange-500 to-orange-400 bg-gradient-to-tl absolute -top-36 -right-16 lg:-right-36 w-100 h-100 lg:w-130 lg:h-110 rounded-full blur-3xl opacity-55"
+        className="gradient-bg absolute -top-70 lg:-top-100 -left-70 w-120 h-150 lg:w-190 lg:h-190 rounded-full blur-3xl opacity-15"
       />
       <div
-        aria-hidden="true"
-        className="pointer-events-none from-yellow-600 via-orange-500 to-orange-400 bg-gradient-to-tl absolute -bottom-70 -right-16 lg:right-15 w-120 h-120 lg:w-130 lg:h-110 rounded-full blur-3xl opacity-35"
-      />
-      
-      <div className="mx-auto relative z-10">
-        <div className="section-title-div">
-          <span className="text-[#929292] section-title">Industries we serve</span>
-        </div>
-        <h2 className="max-w-lg text-white">Our solutions are tailored to the unique needs of our customers.</h2>
+        ref={ref}
+        style={{ marginLeft: mx, marginRight: mx, transition: "margin 150ms linear",}}
+        className="relative overflow-hidden section-bg section-l-p section-r-p py-12 lg:py-20 rounded-xl"
+      >
+        {/* corner glows (pointer-events-none so they don't intercept clicks) */}
+        <div
+          aria-hidden="true"
+          className="gradient-bg absolute -top-36 -right-16 lg:-right-36 w-100 h-100 lg:w-130 lg:h-110 rounded-full blur-3xl opacity-55"
+        />
+        <div
+          aria-hidden="true"
+          className="gradient-bg absolute -bottom-70 -right-16 lg:right-15 w-120 h-120 lg:w-130 lg:h-110 rounded-full blur-3xl opacity-75"
+        />
+        
+        
+        <div className="mx-auto relative z-10">
+          <div className="section-title-div">
+            <span className="text-[#929292] section-title">Industries we serve</span>
+          </div>
+          <h2 className="max-w-lg text-white">Our solutions are tailored to the unique needs of our customers.</h2>
 
-        <div className="mt-7 md:mt-10 lg:mt-12 grid gap-5 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((it) => (
-            <Link
-              to={`/${it.slug}`}
-              key={it.title}
-              className="rounded-xl bg-[#1d201d] p-6 md:p-10 cursor-pointer flex flex-col gap-8"
-            >
-              <div className="text-7xl text-[#f5f9f5]">{it.icon}</div>{/** 
-              <div className="w-full overflow-hidden rounded-md">
-                <img
-                  src={it.image}
-                  alt={`${it.title} illustration`}
-                  loading="lazy"
-                  className="w-20 xl:w-24 object-cover"
-                />
-              </div>*/}
-              <div className="flex flex-col gap-3">
-                <h3 className="text-[22px] md:text-[28px] font-medium text-[#f5f9f5]">{it.title}</h3>
-                <p className="text-[#a7aaa7] text-[16px] md:text-[18px] xl:text-[20px]">{it.desc}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="mt-10">
-          <AnimatedArrowButton
-            label="Learn more about our solutions"
-            to="#contact"
-            labelClass="bg-[#f5f9f5] text-[#0a0f0a]"
-            iconTextColor="text-red-950"
-          />
+          <div className="mt-7 md:mt-10 lg:mt-12 grid gap-5 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((it) => (
+              <Link
+                to={`/${it.slug}`}
+                key={it.title}
+                className="rounded-xl bg-[#1d201d] p-6 md:p-10 cursor-pointer flex flex-col gap-8"
+              >
+                <div className="text-7xl text-[#f5f9f5]">{it.icon}</div>{/** 
+                <div className="w-full overflow-hidden rounded-md">
+                  <img
+                    src={it.image}
+                    alt={`${it.title} illustration`}
+                    loading="lazy"
+                    className="w-20 xl:w-24 object-cover"
+                  />
+                </div>*/}
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-[22px] md:text-[28px] font-medium text-[#f5f9f5]">{it.title}</h3>
+                  <p className="text-[#a7aaa7] text-[16px] md:text-[18px] xl:text-[20px]">{it.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10">
+            <AnimatedArrowButton
+              label="Learn more about our solutions"
+              to="#contact"
+              labelClass="bg-[#f5f9f5] text-[#0a0f0a]"
+              iconTextColor="text-red-950"
+            />
+          </div>
         </div>
       </div>
     </section>

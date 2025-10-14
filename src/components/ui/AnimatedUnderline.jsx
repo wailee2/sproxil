@@ -10,6 +10,13 @@ import React, { useState } from 'react'
  * Usage:
  *  <AnimatedUnderline>Hover me</AnimatedUnderline>
  *  <AnimatedUnderline as="a" href="/about">About</AnimatedUnderline>
+  * <AnimatedUnderline
+      as="a" href="/about"
+      color="#ffffff"
+      className='footer-link'
+    >
+      About
+    </AnimatedUnderline>
  *
  * Props:
  *  - as: string (element tag to render, e.g. 'span'|'a'|'div')
@@ -27,8 +34,8 @@ export default function AnimatedUnderline({
   className = '',
   color = 'currentColor',
   thickness = 2,
-  durationEnter = 300,
-  durationExit = 240,
+  durationEnter = 400,
+  durationExit = 270,
   ...rest
 }) {
   const Tag = as
@@ -84,7 +91,7 @@ export default function AnimatedUnderline({
         aria-hidden
         onTransitionEnd={onUnderlineTransitionEnd}
         style={underlineStyle}
-        className={`pointer-events-none absolute left-0 bottom-0 w-full h-[var(--underline-thickness)] bg-[var(--underline-color)] transform will-change-transform`}
+        className={`pointer-events-none absolute left-0 bottom-1 w-full h-[var(--underline-thickness)] bg-[var(--underline-color)] transform will-change-transform`}
       />
     </Tag>
   )
