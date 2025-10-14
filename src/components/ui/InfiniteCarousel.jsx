@@ -26,7 +26,7 @@ export default function InfiniteCarousel({
   pauseOnHover = true,
   className = "",
   style = {},
-  minSets = 20, // minimum number of repeated sets
+  minSets = 3, // minimum number of repeated sets
 }) {
   const containerRef = useRef(null);
   const scrollerRef = useRef(null);

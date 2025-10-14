@@ -1,34 +1,60 @@
 import React from 'react';
 import InfiniteCarousel from './ui/InfiniteCarousel';
 
-const partners = [
+const partnersRowA = [
   {
-    name: 'Rainoil',
-    quote:
-      'We now have deep visibility into our customer experiences and what they think about our products and services not just at our stations but also our depo. This will greatly impact our business intelligence for 2025.',
-    image: '/rainoil.png',
+    name: 'Saint-Gobain',
+    image: '/saint-white.png',
   },
   {
     name: 'WWCVL',
-    quote:
-      'We have been using Sproxil for over five years now. We are confident in their solution and include them in our marketing campaigns and brand protection efforts.',
-    image:
-      '/wwcvl.png',
+    image: '/wwcvl-white.png',
   },
   {
     name: 'Diageo',
-    quote:
-      'During this campaign, Diageo was able to identify through the Sproxil platform 15,000 influencers in the specific geographic area. As a result of the promotion Diageo saw growth in its market share in one of the target states by 2025.',
-    image:
-      '/diageo.png',
+    image: '/diageo-white.png',
   },
+  {
+    name: 'Swipha',
+    image: '/swipha-white.png',
+  },
+  {
+    name: 'FUCHS',
+    image: '/fuchs-white.png',
+  },
+  {
+    name: 'Norvartis',
+    image: '/novartis-white.png',
+  },
+];
+const partnersRowB = [
+  {
+    name: 'Bliss',
+    image: '/bliss-white.png',
+  },
+  {
+    name: 'Shalina',
+    image: '/sha-white.png',
+  },
+  {
+    name: 'Fonterra',
+    image: '/fonterra-white.png',
+  },
+  {
+    name: 'GSK',
+    image: '/gsk-white.png',
+  },
+  {
+    name: 'DNI',
+    image: '/dni-white.png',
+  }
 ];
 
 export default function Partners() {
     return (
         <section
             id="partners"
-            className="py-16 pb-100 section-l-p section-r-p section-bg relative overflow-hidden rounded-xl"
+            className="py-16 pb-100 section-bg relative overflow-hidden rounded-xl"
         >
             <div
                 aria-hidden="true"
@@ -40,7 +66,7 @@ export default function Partners() {
             />
             
             <div className="mx-auto rounded-xl  overflow-hidden relative z-10">
-                <div className=''>
+                <div className='section-l-p section-r-p'>
                     <div className="section-title-div">
                         <span className="text-[#929292] section-title ">Our Partners</span>
                     </div>
@@ -49,25 +75,47 @@ export default function Partners() {
                         We secure supply chains and power consumer engagement.
                     </p>
                 </div>
-                <div className='bg-amber-500'>
+                <div className='space-y-5 mt-10'>
                     <InfiniteCarousel
                         speed={180}
                         direction="left"
                         onScrollUp="right"
                         onScrollDown="left"
-                        pauseOnHover={true}
-                        className="py-6 "
+                        pauseOnHover={false}
+                        className=""
                         >
-                        {partners.map((p) => (
+                        {partnersRowA.map((p) => (
                             <div
                                 key={p.name}
-                                className='bg-green-700 w-50'
+                                className='partner-div'
+                            >
+                                <img
+                                    src={p.image}
+                                    alt={`${p.name} logo`}
+                                    loading="lazy"
+                                    className=" partner-img"
+                                />
+                            </div>
+                        ))}
+                    </InfiniteCarousel>
+                    <InfiniteCarousel
+                        speed={180}
+                        direction="right"
+                        onScrollUp="left"
+                        onScrollDown="right"
+                        pauseOnHover={false}
+                        className=""
+                        >
+                        {partnersRowB.map((p) => (
+                            <div
+                                key={p.name}
+                                className='partner-div'
                             >
                                 <img
                                     src={p.image}
                                     alt={`partner-${p.id}`}
                                     loading="lazy"
-                                    className=" w-full h-28 sm:h-32 md:h-40 object-contain"
+                                    className="partner-img"
                                 />
                             </div>
                         ))}
