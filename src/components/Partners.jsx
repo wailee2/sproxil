@@ -54,7 +54,7 @@ export default function Partners() {
     return (
         <section
             id="partners"
-            className="py-16 pb-100 section-bg relative overflow-hidden rounded-xl"
+            className="py-17 section-bg relative overflow-hidden rounded-xl"
         >
             <div
                 aria-hidden="true"

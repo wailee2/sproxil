@@ -129,7 +129,7 @@ export default function Industries() {
               <Link
                 to={`/${it.slug}`}
                 key={it.title}
-                className="rounded-xl bg-[#1d201d] p-6 md:p-10 cursor-pointer flex flex-col gap-8"
+                className="rounded-xl bg-[#272525] p-6 md:p-10 cursor-pointer flex flex-col gap-8"
               >
                 <div className="text-7xl text-[#f5f9f5]">{it.icon}</div>{/** 
                 <div className="w-full overflow-hidden rounded-md">

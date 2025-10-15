@@ -39,32 +39,25 @@ export default function Footer() {
               Home
             </AnimatedUnderline>
             <AnimatedUnderline
-              as="a" href="/about"
+              as="a" href="/industries"
               color="#ffffff"
               className='footer-link'
             >
-              About
+              Industries
             </AnimatedUnderline>
             <AnimatedUnderline
-              as="a" href="/faqs"
+              as="a" href="/solutions"
               color="#ffffff"
               className='footer-link'
             >
-              FAQs - AISHA
+              Solutions
             </AnimatedUnderline>
             <AnimatedUnderline
-              as="a" href="/term-of-service"
+              as="a" href="/products"
               color="#ffffff"
               className='footer-link'
             >
-              Term of Service
-            </AnimatedUnderline>
-            <AnimatedUnderline
-              as="a" href="/privacy-policy"
-              color="#ffffff"
-              className='footer-link'
-            >
-              Privacy Policy
+              Products
             </AnimatedUnderline>
           </div>
 

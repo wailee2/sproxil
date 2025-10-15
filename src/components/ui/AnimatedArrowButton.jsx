@@ -45,7 +45,7 @@ export default function AnimatedArrowButton({
         <button
           type={to ? undefined : "button"}
           className={
-            `inline-flex items-center rounded-full ${labelClass} p-4 lg:p-5 text-md lg:text-lg shadow transition-transform duration-200 cursor-pointer bg-[#f5f9f5]`
+            `inline-flex items-center rounded-full ${labelClass} p-4 lg:p-5 text-md md:text-lg shadow transition-transform duration-200 cursor-pointer bg-[#f5f9f5]`
           }
           onClick={(e) => {
             if (to && typeof to === "string" && to.startsWith("#")) {

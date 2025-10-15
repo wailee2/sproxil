@@ -1,53 +1,114 @@
-import React, { useState } from 'react';
+import React, { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  return (
-    <header className="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <a href="#" className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">M</div>
-            <span className="text-lg font-semibold text-slate-900">MaiWay</span>
-          </a>
+const navlink = [
+  { name: 'home', slug: "/"},
+  { name: 'industries', slug: "/"},
+  { name: 'solution', slug: "/"},
+  { name: 'home', slug: "/"},
+];
 
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#industries" className="text-sm font-medium text-slate-700 hover:text-slate-900">Industries</a>
-            <a href="#testimonials" className="text-sm font-medium text-slate-700 hover:text-slate-900">Testimonials</a>
-            <a href="#contact" className="text-sm font-medium text-slate-700 hover:text-slate-900">Contact</a>
-            <a href="#" className="ml-2 inline-block rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow">Get Started</a>
-          </nav>
+export default function Navbar({
+    open = false,          // controlled open state
+    setOpen = () => {},    // setter from parent
+    renderToggleButton = false, // default: 
+    overlayDuration = 0.25,
+    mainDuration = 0.6,
+    items = null,
+}) {
+    const defaultItems = [
+        { bg: "bg-green-500", translate: 24, duration: 0.35, delay: 0.06, drag: false },
+        { bg: "bg-blue-500", translate: 20, duration: 0.45, delay: 0.12, drag: false },
+        { bg: "bg-yellow-400", translate: 16, duration: 0.7, delay: 0.22, drag: true },
+    ];
+    const cfg = items && items.length === 3 ? items : defaultItems;
 
-          {/* mobile */}
-          <div className="md:hidden">
-            <button
-              aria-label={open ? 'Close menu' : 'Open menu'}
-              onClick={() => setOpen(!open)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100"
-            >
-              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                {open ? (
-                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    useEffect(() => {
+        function onKey(e) {
+        if (e.key === "Escape") setOpen(false);
+        }
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [setOpen]);
+
+    return (
+        <div className="lg:hidden">
+            
+
+            {/* Overlay: white fade-in. Controlled via `open` and overlayDuration prop */}
+            <AnimatePresence>
+                {open && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: overlayDuration }}
+                    className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
+                    onClick={() => setOpen(false)}
+                    aria-hidden={!open}
+                />
                 )}
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+            </AnimatePresence>
 
-      {/* Mobile menu panel */}
-      {open && (
-        <div className="md:hidden border-t">
-          <div className="space-y-2 px-6 py-4">
-            <a href="#industries" className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50">Industries</a>
-            <a href="#testimonials" className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50">Testimonials</a>
-            <a href="#contact" className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50">Contact</a>
-            <a href="#" className="block rounded-md bg-green-600 px-3 py-2 text-base font-semibold text-white">Get Started</a>
-          </div>
+            {/* Red panel */}
+            <AnimatePresence>
+                {open && (
+                <motion.div
+                    initial={{ y: "100%", borderTopLeftRadius: "20rem", borderTopRightRadius: "20rem" }}
+                    animate={{ y: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
+                    exit={{ y: "100%", borderTopLeftRadius: "20rem", borderTopRightRadius: "20rem" }}
+                    transition={{ duration: mainDuration, ease: "easeInOut", delay: overlayDuration }}
+                    className="fixed left-0 right-0 bottom-0 z-60 min-h-screen bg-[#0f0a0a] text-white rounded-t-[20rem] shadow-2xl"
+                >
+                    <div className=" mx-auto p-4 gap-4 w-full flex flex-col sm:flex-row">
+                        <div className="bg-white py-4 px-8 sm:px-14 md:px-20 text-base sm:text-xl w-full rounded-3xl">
+                            <span className="text-base font-semibold text-black">Navigation</span>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Industries</a></li>
+                                <li><a href="#">Solutions</a></li>
+                                <li><a href="#">Products</a></li>
+                            </ul>
+                        </div>
+                        <div className="bg-white px-8 sm:px-14 md:px-20 text-base sm:text-xl w-full">je</div>
+
+                        {/** 
+                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                            {cfg.map((c, i) => (
+                            <motion.div
+                                key={i}
+                                drag={c.drag}
+                                dragConstraints={{ top: -20, bottom: 20, left: -10, right: 10 }}
+                                initial={{ y: c.translate, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: c.translate, opacity: 0 }}
+                                transition={{ duration: c.duration, delay: c.delay, ease: "easeOut" }}
+                                className={`rounded-xl p-6 ${c.bg} text-white min-h-[8rem] flex items-center justify-center`}
+                            >
+                                <div className="text-center">
+                                <div className="font-semibold text-lg">Box {i + 1}</div>
+                                <div className="text-sm opacity-90">drag: {String(Boolean(c.drag))}</div>
+                                </div>
+                            </motion.div>
+                            ))}
+                        </div>
+
+                        <div className="mt-8 text-sm opacity-80">
+                            Press <kbd className="px-2 py-1 bg-white/10 rounded">Esc</kbd> to close
+                        </div>*/}
+                    </div>
+                </motion.div>
+                )}
+            </AnimatePresence>
+
+            {renderToggleButton && open && (
+                <button
+                    onClick={() => setOpen((s) => !s)}
+                    className="absolute top-3 h-7.5 sm:h-15 right-6 sm:right-[4%] z-70 nav-button lg:hidden"
+                >
+                    {open ? "close •" : "menu  •"}
+                </button>
+            )}
         </div>
-      )}
-    </header>
-  );
+    );
 }

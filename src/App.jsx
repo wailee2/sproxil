@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css'
-import Navbar from './components/Navbar';
+import Headers from './components/Header';
+import Navbar from './components/ui/Navbar';
 import Hero from './components/Hero';
 import Industries from './components/Industries';
 import Services from './components/Services';
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 text-black sansation-regular">
       {/*<Navbar />*/}
+      <Headers />
       <main className=" flex-grow">
         <Hero />
         <Industries />
