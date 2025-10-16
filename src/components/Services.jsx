@@ -36,9 +36,9 @@ export default function Services() {
       />
       <div className="mx-auto relative z-10">
         <div className="section-title-div">
-          <span className="text-[#4c4848] section-title">Our Core Services</span>
+          <span className="text-[#4c4848] section-title">Our Core Products</span>
         </div>
-        <h2 className="max-w-2xl text-black">We offer solutions to survey, track, engage, reward, and protect your brand.</h2>
+        <h2 className="max-w-2xl text-black">We offer products to survey, track, engage, reward, and protect your brand.</h2>
 
         <div className="mt-12 grid grid-cols-1 ">
           {services.map((s) => (

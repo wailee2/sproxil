@@ -8,14 +8,11 @@ import React, { useState } from 'react'
  *  - when the cursor leaves, the underline exits by sliding to the right
  *
  * Usage:
- *  <AnimatedUnderline>Hover me</AnimatedUnderline>
- *  <AnimatedUnderline as="a" href="/about">About</AnimatedUnderline>
-  * <AnimatedUnderline
+    <AnimatedUnderline
       as="a" href="/about"
-      color="#ffffff"
-      className='footer-link'
+      className=' bg-green-700'
     >
-      About
+      <span className='bg-amber-500  footer-link'>{n.name}</span>
     </AnimatedUnderline>
  *
  * Props:
@@ -31,7 +28,7 @@ import React, { useState } from 'react'
 export default function AnimatedUnderline({
   as = 'span',
   children,
-  className = '',
+  className = "bg-red-500",
   color = 'currentColor',
   thickness = 2,
   durationEnter = 400,
@@ -76,7 +73,7 @@ export default function AnimatedUnderline({
 
   return (
     <Tag
-      className={`relative inline-block overflow-hidden ${className}`}
+      className={`relative inline-block overflow-hidden w-fit `}
       onMouseEnter={handleEnter}
       onFocus={handleEnter}
       onMouseLeave={handleLeave}
@@ -91,7 +88,7 @@ export default function AnimatedUnderline({
         aria-hidden
         onTransitionEnd={onUnderlineTransitionEnd}
         style={underlineStyle}
-        className={`pointer-events-none absolute left-0 bottom-1 w-full h-[var(--underline-thickness)] bg-[var(--underline-color)] transform will-change-transform`}
+        className={`pointer-events-none absolute left-0 bottom-1 w-full ${className} h-[var(--underline-thickness)] bg-[var(--underline-color)] transform will-change-transform`}
       />
     </Tag>
   )
@@ -104,13 +101,6 @@ Notes & tips:
  - The component is keyboard-accessible: focus triggers the same enter animation.
  - If you want the underline to be centered under the text, reduce `paddingBottom` or style the wrapper externally.
 
- Usage
- <AnimatedUnderline
-    as="a" href="/about"
-    color="#ffffff"
-    className='footer-link'
->
-    About
-</AnimatedUnderline>
+ 
 */
 

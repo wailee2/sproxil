@@ -1,11 +1,33 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedUnderline from './ui/AnimatedUnderline';
+import { Link } from 'react-router-dom';
 
 const navlink = [
-  { name: 'home', slug: "/"},
-  { name: 'industries', slug: "/"},
-  { name: 'solution', slug: "/"},
-  { name: 'home', slug: "/"},
+  { name: 'home', slug: ""},
+  { name: 'industries', slug: "industries",},
+  { name: 'solutions', slug: "solutions",},
+  { name: 'products', slug: "products",},
+  { name: 'contact', slug: "contact",},
+];
+
+const sociallink = [
+  {
+    name: 'Facebook', image: '/bliss.png',
+    slug: "http://facebook.com/",
+  },
+  {
+    name: 'x', image: '/bliss.png',
+    slug: "http://x.com/",
+  },
+  {
+    name: 'linkedin', image: '/bliss.png',
+    slug: "http://linkedin.com/",
+  },
+  {
+    name: 'instagram', image: '/bliss.png',
+    slug: "http://instagram.com/",
+  },
 ];
 
 export default function Navbar({
@@ -60,17 +82,45 @@ export default function Navbar({
                     transition={{ duration: mainDuration, ease: "easeInOut", delay: overlayDuration }}
                     className="fixed left-0 right-0 bottom-0 z-60 min-h-screen bg-[#0f0a0a] text-white rounded-t-[20rem] shadow-2xl"
                 >
-                    <div className=" mx-auto p-4 gap-4 w-full flex flex-col sm:flex-row">
-                        <div className="bg-white py-4 px-8 sm:px-14 md:px-20 text-base sm:text-xl w-full rounded-3xl">
-                            <span className="text-base font-semibold text-black">Navigation</span>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Industries</a></li>
-                                <li><a href="#">Solutions</a></li>
-                                <li><a href="#">Products</a></li>
-                            </ul>
+                    <div className=" mx-auto p-4 gap-4 w-full h-full bg-amber-400 flex flex-col sm:flex-row">
+                        <div className="bg-white py-4 px-8 sm:px-14 sm:w-1/2 rounded-2xl flex flex-col justify-between">
+                            <span className="text-sm sm:text-xl font-semibold text-black">Navigation</span>
+                            {navlink.map((n) => (
+                                <Link
+                                    to={`/${n.slug}`}
+                                    key={n.name}
+                                    className="w-full"
+                                >
+                                    <div className="text-black border-t-2 w-full border-gray-200 py-1 sm:py-3">
+                                        <span className="capitalize text-[32px] sm:text-5xl font-semibold ">{n.name}</span>
+                                    </div>
+                                </Link>
+                            ))}
                         </div>
-                        <div className="bg-white px-8 sm:px-14 md:px-20 text-base sm:text-xl w-full">je</div>
+                        <div className="flex flex-col sm:w-1/2">
+                            <div className="bg-white py-4 px-8 sm:px-14 md:px-20 rounded-2xl w-full">
+                                <span className="text-2xl sm:text-[32px] font-semibold text-black">Our Socials</span>
+                                {sociallink.map((s) => (
+                                    <div className='text-black flex '>
+                                        <img
+                                            src={s.image}
+                                            alt={`${s.name} logo`}
+                                            loading="lazy"
+                                            className="footer-social-img"
+                                        />
+                                        <AnimatedUnderline
+                                            key={s.name}
+                                            as="a"
+                                            href={s.slug}
+                                            className=' bg-white'
+                                            thickness={1.5}
+                                        >
+                                            <span className=''>{s.name}</span>
+                                        </AnimatedUnderline>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
 
                         {/** 
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">

@@ -3,6 +3,32 @@ import AnimatedArrowButton from './ui/AnimatedArrowButton';
 import AnimatedUnderline from './ui/AnimatedUnderline';
 import { Link } from "react-router-dom";
 
+const navlink = [
+  { name: 'home', slug: ""},
+  { name: 'industries', slug: "industries",},
+  { name: 'solutions', slug: "solutions",},
+  { name: 'products', slug: "products",},
+];
+
+const sociallink = [
+  {
+    name: 'Facebook', image: '/bliss.png',
+    slug: "http://facebook.com/",
+  },
+  {
+    name: 'x', image: '/bliss.png',
+    slug: "http://x.com/",
+  },
+  {
+    name: 'linkedin', image: '/bliss.png',
+    slug: "http://linkedin.com/",
+  },
+  {
+    name: 'instagram', image: '/bliss.png',
+    slug: "http://instagram.com/",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="section-l-p section-r-p section-bg rounded-t-xl pt-16 pb-7 relative overflow-hidden ">
@@ -31,94 +57,39 @@ export default function Footer() {
             </div>
           </div>
           <div className='flex flex-col sm:col-span-1 md:col-span-4 gap-1 w-fit'>
-            <AnimatedUnderline
-              as="a" href="/"
-              color="#ffffff"
-              className='footer-link'
-            >
-              Home
-            </AnimatedUnderline>
-            <AnimatedUnderline
-              as="a" href="/industries"
-              color="#ffffff"
-              className='footer-link'
-            >
-              Industries
-            </AnimatedUnderline>
-            <AnimatedUnderline
-              as="a" href="/solutions"
-              color="#ffffff"
-              className='footer-link'
-            >
-              Solutions
-            </AnimatedUnderline>
-            <AnimatedUnderline
-              as="a" href="/products"
-              color="#ffffff"
-              className='footer-link'
-            >
-              Products
-            </AnimatedUnderline>
+            {navlink.map((n) => (
+              <AnimatedUnderline
+                key={n.name}
+                as="a"
+                href={`/${n.slug}`}
+                className=' bg-white'
+              >
+                <span className='footer-link'>{n.name}</span>
+              </AnimatedUnderline>
+            ))}
           </div>
 
           <div className='flex flex-col sm:col-span-1 md:col-span-2 gap-1.5 w-fit'>
             <span className='text-[#ecefec] text-[16px] text-lg font-semibold'>Our Socials</span>
-            <div className='footer-social-div'>
-              <img
-                src="/gsk_logo.jpg"
-                alt="logo"
-                className='footer-social-img'
-              />
-              <AnimatedUnderline
-                as="a" href="/facebook"
-                color="#ffffff"
-                className='footer-social'
-              >
-                Facebook
-              </AnimatedUnderline>
-            </div>
-            <div className='footer-social-div'>
-              <img
-                src="/gsk_logo.jpg"
-                alt="logo"
-                className='footer-social-img'
-              />
-              <AnimatedUnderline
-                as="a" href="/x"
-                color="#ffffff"
-                className='footer-social'
-              >
-                X
-              </AnimatedUnderline>
-            </div>
-            <div className='footer-social-div'>
-              <img
-                src="/gsk_logo.jpg"
-                alt="logo"
-                className='footer-social-img'
-              />
-              <AnimatedUnderline
-                as="a" href="/linkedin"
-                color="#ffffff"
-                className='footer-social'
-              >
-                linkedin
-              </AnimatedUnderline>
-            </div>
-            <div className='footer-social-div'>
-              <img
-                src="/gsk_logo.jpg"
-                alt="logo"
-                className='footer-social-img'
-              />
-              <AnimatedUnderline
-                as="a" href="/instagram"
-                color="#ffffff"
-                className='footer-social'
-              >
-                instagram
-              </AnimatedUnderline>
-            </div>
+            {sociallink.map((s) => (
+              <div className='footer-social-div'>
+                <img
+                  src={s.image}
+                  alt={`${s.name} logo`}
+                  loading="lazy"
+                  className="footer-social-img"
+                />
+                <AnimatedUnderline
+                  key={s.name}
+                  as="a"
+                  href={s.slug}
+                  className=' bg-white'
+                  thickness={1.5}
+                >
+                  <span className='footer-social'>{s.name}</span>
+                </AnimatedUnderline>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -127,10 +98,12 @@ export default function Footer() {
           <span className='flex items-center col-span-2 shrink-0 text-nowrap gap-1 text-[#959795] '>Crafted
             <AnimatedUnderline
               as="a" href="https://www.wailee.com/"
-              color="#ffffff"
-              className=' mt-1 text-[#959795]'
+              className='bg-white text-[#959795]'
             >
-              by Wailee
+              <div className='mt-1'>
+                <span>by Wailee</span>
+              </div>
+              
             </AnimatedUnderline>
           </span>
           <span className='text-[#959795] col-span-2 flex justify-end'>© {new Date().getFullYear()}</span>

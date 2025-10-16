@@ -95,6 +95,7 @@ p {
     color: #ecefec;
     font-size: 24px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
 .footer-social-div{
