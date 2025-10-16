@@ -100,13 +100,8 @@ export default function Industries() {
     };
   }, [lenis]);
 
-  const mx = `${6 * progress}%`;
+  const mx = `${4.5 * progress}%`;
   const my = `${9 * progress}%`;
-
-  // compute a scaleX that emulates symmetric left/right margins but uses transform
-  const mxPercent = 6 * progress; // same numbers you used
-  const totalShrink = 2 * mxPercent; // left+right
-  const scaleX = 1 - totalShrink / 100; // scaleX value between ~0.88 and 1
 
 
   return (
@@ -119,9 +114,8 @@ export default function Industries() {
         className="relative overflow-hidden section-bg section-l-p section-r-p  py-12 lg:py-20 rounded-xl"
         style={{
           marginLeft: mx, marginRight: mx, marginTop:my,
-          transform: `scaleX(${scaleX}) translateZ(0)`, // GPU-accelerated
+          transform: ` translateZ(0)`,
           transformOrigin: "center center",
-          transitiwon: "transform 200ms linear", // small duration for smooth interpolation
           willChange: "transform",
         }}
       >
