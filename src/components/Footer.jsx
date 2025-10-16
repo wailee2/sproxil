@@ -77,7 +77,7 @@ export default function Footer() {
                   src={s.image}
                   alt={`${s.name} logo`}
                   loading="lazy"
-                  className="w-4.5 h-4.5 object-cover"
+                  className="w-4.5 h-4.5 object-cover mb-1"
                 />
                 <AnimatedUnderline
                   key={s.name}
