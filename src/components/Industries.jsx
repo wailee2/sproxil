@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import AnimatedArrowButton from './ui/AnimatedArrowButton';
+import { useLenis } from "../LenisProvider"; // <- import the hook from your provider (see earlier)
 
 import { BiSolidDonateHeart } from "react-icons/bi";
 import { LuBriefcaseMedical } from "react-icons/lu";
@@ -61,54 +62,68 @@ function clamp(v, a = 0, b = 1) {
 export default function Industries() {
   const ref = useRef(null);
   const [progress, setProgress] = useState(1);
-  const ticking = useRef(false);
+  const lenis = useLenis();
 
   useEffect(() => {
-    const onScroll = () => {
+    // Handler that computes progress from getBoundingClientRect
+    const compute = () => {
       if (!ref.current) return;
-      if (ticking.current) return;
-      ticking.current = true;
-      window.requestAnimationFrame(() => {
-        const rect = ref.current.getBoundingClientRect();
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-        const start = viewportHeight;
-        const top = rect.top;
-        const raw = top / start;
-        const p = clamp(raw, 0, 1);
-        setProgress(p);
-
-        ticking.current = false;
-      });
+      const rect = ref.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const start = viewportHeight;
+      const top = rect.top;
+      const raw = top / start;
+      const p = clamp(raw, 0, 1);
+      setProgress(p);
     };
 
-    onScroll();
+    // If we have a Lenis instance, subscribe to its scroll event (fires each RAF tick)
+    if (lenis && typeof lenis.on === "function") {
+      lenis.on("scroll", compute);
+      // run once to initialize
+      compute();
+      return () => {
+        lenis.off("scroll", compute);
+      };
+    }
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    // Fallback: if no Lenis, use RAF loop to compute each frame (still smooth)
+    let raf = null;
+    const loop = () => {
+      compute();
+      raf = requestAnimationFrame(loop);
+    };
+    loop();
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [lenis]);
 
   const mx = `${6 * progress}%`;
-  const my = `${15 * progress}%`;
+  const my = `${9 * progress}%`;
+
+  // compute a scaleX that emulates symmetric left/right margins but uses transform
+  const mxPercent = 6 * progress; // same numbers you used
+  const totalShrink = 2 * mxPercent; // left+right
+  const scaleX = 1 - totalShrink / 100; // scaleX value between ~0.88 and 1
+
+
   return (
-    <section
-      className="relative"
-      id="industries"
-    >
+    <section ref={ref} className="relative" id="industries">
       <div
         aria-hidden="true"
         className="gradient-bg absolute -top-70 lg:-top-100 -left-70 w-120 h-150 lg:w-190 lg:h-190 rounded-full blur-3xl opacity-15"
       />
       <div
-        ref={ref}
-        style={{ 
-          marginLeft: mx, marginRight: mx, marginTop:my, transition: "margin 120ms linear",}
-        }
-        className="relative overflow-hidden section-bg section-l-p section-r-p py-12 lg:py-20 rounded-xl"
+        className="relative overflow-hidden section-bg section-l-p section-r-p  py-12 lg:py-20 rounded-xl"
+        style={{
+          marginLeft: mx, marginRight: mx, marginTop:my,
+          transform: `scaleX(${scaleX}) translateZ(0)`, // GPU-accelerated
+          transformOrigin: "center center",
+          transitiwon: "transform 200ms linear", // small duration for smooth interpolation
+          willChange: "transform",
+        }}
       >
         {/* corner glows (pointer-events-none so they don't intercept clicks) */}
         <div

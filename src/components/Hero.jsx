@@ -8,7 +8,7 @@ export default function Hero() {
                 aria-hidden="true"
                 className="gradient-bg absolute top-5 lg:top-10 -right-70 w-100 h-90 md:w-130 md:h-110 rounded-full blur-3xl opacity-50"
             />
-            <div className="mx-auto py-11 pt-20 lg:pt-52 relative z-10">
+            <div className="mx-auto pb-12 md:pb-10 lg:pb-11 xl:pb-8 pt-20 lg:pt-52 relative z-10">
                 <h1 className="lg:max-w-[85%] text-black sansation-bold">
                     We <span className="sansation-bold-italic">help</span> brands build trust and loyalty.
                 </h1>

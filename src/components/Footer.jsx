@@ -31,7 +31,7 @@ const sociallink = [
 
 export default function Footer() {
   return (
-    <footer className="section-l-p section-r-p section-bg rounded-t-xl pt-16 pb-7 relative overflow-hidden ">
+    <footer className="section-l-p section-r-p section-bg rounded-t-xl  pt-16 pb-7 relative overflow-hidden ">
       <div
         aria-hidden="true"
         className="gradient-bg rotate-45 absolute -bottom-50 left-[15%] sm:left-[30%] lg:left-[35%] 2xl:left-[45%]  w-80 h-80 lg:w-100 lg:h-100 blur-2xl opacity-75"

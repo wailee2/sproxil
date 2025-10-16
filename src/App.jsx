@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 import './App.css'
-import Headers from './components/Header';
-import Navbar from './components/ui/Navbar';
+import Header from './components/Header';
 import Hero from './components/Hero';
 import Industries from './components/Industries';
 import Services from './components/Services';
@@ -13,8 +12,7 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 text-black sansation-regular">
-      {/*<Navbar />*/}
-      <Headers />
+      <Header />
       <main className=" flex-grow">
         <Hero />
         <Industries />

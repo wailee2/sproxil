@@ -32,7 +32,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 section-l-p section-r-p"
+      className="mb-16 section-l-p section-r-p"
     >
       <div className="mx-auto px-8 md:px-10 lg:px-20 py-30 xl:py-56 rounded-xl section-bg overflow-hidden relative">
         <div
