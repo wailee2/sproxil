@@ -80,9 +80,9 @@ export default function Navbar({
                     animate={{ y: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
                     exit={{ y: "100%", borderTopLeftRadius: "20%", borderTopRightRadius: "20%" }}
                     transition={{ duration: mainDuration, ease: "easeInOut", delay: overlayDuration }}
-                    className="fixed top-0 left-0 right-0 bottom-0 z-60 h-screen overflow-auto bg-[#0f0a0a] text-white rounded-t-[20rem] shadow-2xl"
+                    className="fixed top-0 left-0 right-0 bottom-0 z-60 h-screen overflow-auto bg-[#0f0a0a] text-white rounded-none shadow-2xl"
                 >
-                    <div className=" mx-auto p-4 gap-4 w-full h-full flex flex-col sm:flex-row min-h-0 overflow-y-auto">
+                    <div className=" mx-auto p-4 gap-4 w-full h-full flex flex-col sm:flex-row justify-between min-h-0 overflow-y-auto">
                         <motion.div
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -109,7 +109,7 @@ export default function Navbar({
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 300, opacity: 0}}
                                 transition={{ duration: 1.5, delay: 0, ease: "easeInOut" }}
-                                className="bg-white flex flex-col justify-between py-4 px-8 sm:px-14 md:px-20 rounded-2xl w-full h-full min-h-0 overflow-auto"
+                                className="bg-white flex flex-col justifyn-between py-4 px-8 sm:px-14 md:px-20 rounded-2xl w-full h-full min-h-0 overflow-auto"
                             >
                                 <div className="mb-1.5">
                                     <span className="text-2xl sm:text-[32px] font-semibold text-black">Our Socials</span>
