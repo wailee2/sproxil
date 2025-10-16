@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import HideOnScrollHeader from "./ui/HideOnScrollHeader";
+import HideOnScroll from "./ui/HideOnScroll";
 import AnimatedArrowButton from "./ui/AnimatedArrowButton";
 
 export default function Header() {
@@ -8,7 +8,7 @@ export default function Header() {
 
     return (
         <>
-            <HideOnScrollHeader className="fixed bg-gray-100 section-l-p section-r-p py-3">
+            <HideOnScroll className="fixed bg-gray-100 section-l-p section-r-p py-3 w-full">
                 <nav className="mx-auto flex items-center justify-between relative">
                     <img
                         src="/sproxil.png"
@@ -37,9 +37,9 @@ export default function Header() {
                         </button>
                     </div>
                 </nav>
-            </HideOnScrollHeader>
+            </HideOnScroll>
 
-            {/* Navbar is rendered outside the HideOnScrollHeader, controlled by open/setOpen */}
+            {/* Navbar is rendered outside the HideOnScroll, controlled by open/setOpen */}
             <Navbar 
                 open={open}
                 setOpen={setOpen}

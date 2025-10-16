@@ -14,7 +14,7 @@ export default function AnimatedArrowButton({
 
   // NEW props for customization:
   labelClass = "bg-red-950 text-white",
-  iconCircleBg = "bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400",
+  iconCircleBg = "bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 gradient-bgm",
   iconTextColor = "text-red-950",
 }) {
   const outer = `group inline-flex items-center gap-1`.trim();
@@ -45,7 +45,7 @@ export default function AnimatedArrowButton({
         <button
           type={to ? undefined : "button"}
           className={
-            `inline-flex items-center rounded-full ${labelClass} p-4 lg:p-5 text-md md:text-lg shadow transition-transform duration-200 cursor-pointer bg-[#f5f9f5]`
+            `inline-flex items-center rounded-full ${labelClass} text-nowrap p-4 lg:p-5 text-md md:text-lg shadow transition-transform duration-200 cursor-pointer `
           }
           onClick={(e) => {
             if (to && typeof to === "string" && to.startsWith("#")) {

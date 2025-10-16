@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 /**
- * HideOnScrollHeader
+ * HideOnScroll
  * React + Tailwind v4 component
  * - Stays fixed at the top (top-0)
  * - Hides when scrolling DOWN and shows when scrolling UP by default
@@ -16,12 +16,12 @@ import React, { useEffect, useRef, useState } from "react";
  * - topOffset: number (px) amount of scroll from top to allow automatic hiding
  *
  * Example usage:
- * <HideOnScrollHeader>
+ * <HideOnScroll>
  *   <nav className="max-w-7xl mx-auto px-4 flex items-center justify-between">...nav items...</nav>
- * </HideOnScrollHeader>
+ * </HideOnScroll>
  */
 
-export default function HideOnScrollHeader({
+export default function HideOnScroll({
   children,
   className = "bg-white/80 backdrop-blur-sm",
   invert = false,
@@ -65,15 +65,15 @@ export default function HideOnScrollHeader({
   }, [threshold, invert, topOffset]);
 
   return (
-    <header
+    <div
       aria-hidden={hidden}
-      className={`fixend top-0 w-full left-0 right-0 z-50 transform transition-transform duration-500 ease-in-out ${
+      className={` z-50 transform transition-transform duration-500 ease-in-out ${
         hidden ? "-translate-y-full pointer-events-none" : "translate-y-0"
       } ${className}`}
     >
       <div className="w-full">
         {children}
       </div>
-    </header>
+    </div>
   );
 }

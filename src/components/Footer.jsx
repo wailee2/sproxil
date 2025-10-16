@@ -56,7 +56,7 @@ export default function Footer() {
               />
             </div>
           </div>
-          <div className='flex flex-col sm:col-span-1 md:col-span-4 gap-1 w-fit'>
+          <div className='flex flex-col sm:col-span-1 md:col-span-4 gap-2.5 w-fit'>
             {navlink.map((n) => (
               <AnimatedUnderline
                 key={n.name}
@@ -64,7 +64,7 @@ export default function Footer() {
                 href={`/${n.slug}`}
                 className=' bg-white'
               >
-                <span className='footer-link'>{n.name}</span>
+                <span className='w-fit text-[#ecefec] text-2xl lg:text-[32px] font-semibold capitalize'>{n.name}</span>
               </AnimatedUnderline>
             ))}
           </div>
@@ -72,12 +72,12 @@ export default function Footer() {
           <div className='flex flex-col sm:col-span-1 md:col-span-2 gap-1.5 w-fit'>
             <span className='text-[#ecefec] text-[16px] text-lg font-semibold'>Our Socials</span>
             {sociallink.map((s) => (
-              <div className='footer-social-div'>
+              <div className='flex items-center gap-1.5'>
                 <img
                   src={s.image}
                   alt={`${s.name} logo`}
                   loading="lazy"
-                  className="footer-social-img"
+                  className="w-4.5 h-4.5 rounded-full object-cover"
                 />
                 <AnimatedUnderline
                   key={s.name}
@@ -86,7 +86,7 @@ export default function Footer() {
                   className=' bg-white'
                   thickness={1.5}
                 >
-                  <span className='footer-social'>{s.name}</span>
+                  <span className='w-fit capitalize text-[#a7aaa7]'>{s.name}</span>
                 </AnimatedUnderline>
               </div>
             ))}
