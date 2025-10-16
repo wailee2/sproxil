@@ -80,8 +80,7 @@ export default function Navbar({
                     animate={{ y: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
                     exit={{ y: "100%", borderTopLeftRadius: "20%", borderTopRightRadius: "20%" }}
                     transition={{ duration: mainDuration, ease: "easeInOut", delay: overlayDuration }}
-                    className="fixed left-0 right-0 bottom-0 z-60 h-screen max-h-screen bg-[#0f0a0a] text-white rounded-t-[20rem] shadow-2xl"
-                    style={{ paddingTop: 'env(safe-area-inset-top)' }}
+                    className="fixed top-0 left-0 right-0 bottom-0 z-60 h-screen overflow-auto bg-[#0f0a0a] text-white rounded-t-[20rem] shadow-2xl"
                 >
                     <div className=" mx-auto p-4 gap-4 w-full h-full flex flex-col sm:flex-row min-h-0 overflow-y-auto">
                         <motion.div

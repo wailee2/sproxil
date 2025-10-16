@@ -68,7 +68,7 @@ export default function HideOnScroll({
     <div
       aria-hidden={hidden}
       className={` z-50 transform transition-transform duration-500 ease-in-out ${
-        hidden ? "-translate-y-full pointer-events-none" : "translate-y-0"
+        hidden ? "-translate-y-[150%] pointer-events-none" : "translate-y-0"
       } ${className}`}
     >
       <div className="w-full">
