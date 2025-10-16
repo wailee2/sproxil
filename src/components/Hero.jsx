@@ -18,8 +18,18 @@ export default function Hero() {
                     </div>
                     <p className="text-fluid-body text-balance  max-w-lg">Secure product verification, protect supply chains, and turn each mobile scan into a trusted connection between your brand and customers.</p>
                 </div>
-                <div className="mt-16 lg:mt-18 w-full bg-[url('/herobg.jpg')] bg-cover bg-center h-[65vh] lg:h-[70vh] rounded-bl-2xl lg:rounded-bl-4xl rounded-br-[5rem] lg:rounded-br-[10rem] rounded-tl-[5rem] lg:rounded-tl-[10rem] rounded-tr-2xl lg:rounded-tr-4xl ">
-                </div>
+                <div
+                    className="
+                        mt-16 lg:mt-18 w-full bg-[url('/herobg.jpg')] bg-cover bg-center 
+                        h-[67vh] md:h-[80vh] lg:h-[73vh] xl:h-[71vh] 2xl:h-[70vh]
+                        rounded-tl-[5rem] rounded-tr-2xl rounded-bl-2xl rounded-br-[5rem]
+                        md:rounded-tl-[8.5rem] md:rounded-tr-[1.5rem] md:rounded-bl-[1.5rem] md:rounded-br-[8.5rem]
+                        lg:rounded-tl-[10.5rem] lg:rounded-tr-[2rem] lg:rounded-bl-[2rem] lg:rounded-br-[10.5rem]
+                        xl:rounded-tl-[16rem] xl:rounded-tr-[2.5rem] xl:rounded-bl-[2.5rem] xl:rounded-br-[16rem]
+                        2xl:rounded-tl-[27rem] 2xl:rounded-tr-[5rem] 2xl:rounded-bl-[5rem] 2xl:rounded-br-[27rem] 
+                    "
+                />
+                
             </div>
         </section>
     );
