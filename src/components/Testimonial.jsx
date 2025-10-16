@@ -9,49 +9,49 @@ const quotes = [
     quote:
       'We now have deep visibility into our customer experiences and what they think about our products and services not just at our stations but also our depo. This will greatly impact our business intelligence for 2025.',
     image:
-      '/rainoil.png',
+      '/testimonial/rainoil.png',
   },
   {
     name: 'WWCVL',
     quote:
       'We have been using Sproxil for over five years now. We are confident in their solution and include them in our marketing campaigns and brand protection efforts.',
     image:
-      '/wwcvl.png',
+      '/testimonial/wwcvl.png',
   },
   {
     name: 'Diageo',
     quote:
       'During this campaign, Diageo was able to identify through the Sproxil platform 15,000 influencers in the specific geographic area. As a result of the promotion Diageo saw growth in its market share in one of the target states by 2025.',
     image:
-      '/diageo.png',
+      '/testimonial/diageo.png',
   },
   {
     name: 'Bliss GVS',
     quote:
       ' The response from consumers was enthusiastic. Thousands of calls were made to the help desk, some of which helped us identify counterfeit Ampiclox blisters.',
     image:
-      '/gsk_logo.jpg',
+      '/testimonial/gsk_logo.jpg',
   },
   {
     name: 'Juanco',
     quote:
       'When Juanco learned that their products were being counterfeited. Sproxil mobile phone-based solution helped us quickly protect over 4000 farmers.',
     image:
-      '/juanco.jpg',
+      '/testimonial/juanco.jpg',
   },
   {
     name: 'Saint Gobain',
     quote:
       ' With Ally, we have been able to reach more contractors, provide new leads and better Saint-Gobain contact with contractors',
     image:
-      '/saint.png',
+      '/testimonial/saint.png',
   },
   {
     name: 'Barcardi',
     quote:
       ' We met our goal to increase cocktail orders by 300% and connect directly with thousands of bartenders.',
     image:
-      '/bacardi.jpg',
+      '/testimonial/bacardi.jpg',
   },
 ]
 

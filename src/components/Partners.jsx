@@ -4,49 +4,49 @@ import InfiniteCarousel from './ui/InfiniteCarousel';
 const partnersRowA = [
   {
     name: 'Saint-Gobain',
-    image: '/saint-white.png',
+    image: '/white/saint-white.png',
   },
   {
     name: 'WWCVL',
-    image: '/wwcvl-white.png',
+    image: '/white/wwcvl-white.png',
   },
   {
     name: 'Diageo',
-    image: '/diageo-white.png',
+    image: '/white/diageo-white.png',
   },
   {
     name: 'Swipha',
-    image: '/swipha-white.png',
+    image: '/white/swipha-white.png',
   },
   {
     name: 'FUCHS',
-    image: '/fuchs-white.png',
+    image: '/white/fuchs-white.png',
   },
   {
     name: 'Norvartis',
-    image: '/novartis-white.png',
+    image: '/white/novartis-white.png',
   },
 ];
 const partnersRowB = [
   {
     name: 'Bliss',
-    image: '/bliss-white.png',
+    image: '/white/bliss-white.png',
   },
   {
     name: 'Shalina',
-    image: '/sha-white.png',
+    image: '/white/sha-white.png',
   },
   {
     name: 'Fonterra',
-    image: '/fonterra-white.png',
+    image: '/white/fonterra-white.png',
   },
   {
     name: 'GSK',
-    image: '/gsk-white.png',
+    image: '/white/gsk-white.png',
   },
   {
     name: 'DNI',
-    image: '/dni-white.png',
+    image: '/white/dni-white.png',
   }
 ];
 
@@ -113,7 +113,7 @@ export default function Partners() {
               >
                 <img
                   src={p.image}
-                  alt={`partner-${p.id}`}
+                  alt={`${p.name} logo`}
                   loading="lazy"
                   className="partner-img"
                 />

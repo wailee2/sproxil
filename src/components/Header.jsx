@@ -40,6 +40,8 @@ export default function Header() {
                     ))}
                     </div>
 
+                    <div className="hidden lg:block"></div>
+
                     <div className="flex gap-4">
                         <div className="hidden sm:block">
                             <AnimatedArrowButton label="Get Started" to="#contact" />
