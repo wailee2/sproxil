@@ -16,19 +16,19 @@ const navlink = [
 
 const sociallink = [
   {
-    name: 'Facebook', image: '/bliss.png',
+    name: 'Facebook', image: '/socials/facebook.png',
     slug: "http://facebook.com/",
   },
   {
-    name: 'x', image: '/bliss.png',
+    name: 'x', image: '/socials/x.png',
     slug: "http://x.com/",
   },
   {
-    name: 'linkedin', image: '/bliss.png',
+    name: 'linkedin', image: '/socials/linkedin.png',
     slug: "http://linkedin.com/",
   },
   {
-    name: 'instagram', image: '/bliss.png',
+    name: 'instagram', image: '/socials/instagram.png',
     slug: "http://instagram.com/",
   },
 ];
@@ -39,17 +39,9 @@ export default function Navbar({
     renderToggleButton = false, // default: 
     overlayDuration = 0.25,
     mainDuration = 0.6,
-    items = null,
 }) {
-    const defaultItems = [
-        { bg: "bg-green-500", translate: 24, duration: 0.35, delay: 0.06, drag: false },
-        { bg: "bg-blue-500", translate: 20, duration: 0.45, delay: 0.12, drag: false },
-        { bg: "bg-yellow-400", translate: 16, duration: 0.7, delay: 0.22, drag: true },
-    ];
-    const cfg = items && items.length === 3 ? items : defaultItems;
 
     const iconAnim = `transform transition-all duration-500 ease-in-out`;
-
     const originalIconCls = `${iconAnim} opacity-100  group-hover:-translate-y-6 group-hover:translate-x-6 -rotate-45 group-hover:opacity-0`;
     const incomingIconCls = `${iconAnim} opacity-0 group-hover:translate-x-0 group-hover:rotate-0 group-hover:opacity-100 -translate-x-6 -rotate-12`;
 
@@ -84,15 +76,21 @@ export default function Navbar({
             <AnimatePresence>
                 {open && (
                 <motion.div
-                    initial={{ y: "100%", borderTopLeftRadius: "20rem", borderTopRightRadius: "20rem" }}
+                    initial={{ y: "100%", borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
                     animate={{ y: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0 }}
-                    exit={{ y: "100%", borderTopLeftRadius: "20rem", borderTopRightRadius: "20rem" }}
+                    exit={{ y: "100%", borderTopLeftRadius: "20%", borderTopRightRadius: "20%" }}
                     transition={{ duration: mainDuration, ease: "easeInOut", delay: overlayDuration }}
                     className="fixed left-0 right-0 bottom-0 z-60 h-screen max-h-screen bg-[#0f0a0a] text-white rounded-t-[20rem] shadow-2xl"
                     style={{ paddingTop: 'env(safe-area-inset-top)' }}
                 >
-                    <div className=" mx-auto p-4 gap-4 w-full h-full bg-amber-400 flex flex-col sm:flex-row min-h-0 overflow-y-auto">
-                        <div className="bg-white py-4 px-8 sm:px-14 sm:w-1/2 rounded-2xl flex flex-col justify-between min-h-0 overflow-auto">
+                    <div className=" mx-auto p-4 gap-4 w-full h-full flex flex-col sm:flex-row min-h-0 overflow-y-auto">
+                        <motion.div
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 100, opacity: 1}}
+                            transition={{ duration: 1.5, delay: 0, ease: "easeOut" }}
+                            className="bg-white py-4 px-8 sm:px-14 sm:w-1/2 rounded-2xl flex flex-col justify-between min-h-0 overflow-auto"
+                        >
                             <span className="text-sm sm:text-xl font-semibold text-black">Navigation</span>
                             {navlink.map((n) => (
                                 <Link
@@ -105,13 +103,20 @@ export default function Navbar({
                                     </div>
                                 </Link>
                             ))}
-                        </div>
-                        <div className="flex flex-col sm:w-1/2 gap-4 min-h-0 overflow-auto">
-                            <div className="bg-white py-4 px-8 sm:px-14 md:px-20 rounded-2xl w-full h-full min-h-0 overflow-auto">
-                                <span className="text-2xl sm:text-[32px] font-semibold text-black">Our Socials</span>
+                        </motion.div>
+                        <div className="flex flex-col sm:w-1/2 gap-4 min-h-0">
+                            <motion.div
+                                initial={{ y: 100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: 300, opacity: 0}}
+                                transition={{ duration: 1.5, delay: 0, ease: "easeInOut" }}
+                                className="bg-white flex flex-col justify-between py-4 px-8 sm:px-14 md:px-20 rounded-2xl w-full h-full min-h-0 overflow-auto"
+                            >
+                                <div className="mb-1.5">
+                                    <span className="text-2xl sm:text-[32px] font-semibold text-black">Our Socials</span>
+                                </div>
                                 {sociallink.map((s) => (
-                                    <div className='text-black flex '>
-                                        
+                                    <div className='text-black flex justify-between'>
                                         <AnimatedUnderline
                                             key={s.name}
                                             as="a"
@@ -123,62 +128,52 @@ export default function Navbar({
                                                     src={s.image}
                                                     alt={`${s.name} logo`}
                                                     loading="lazy"
-                                                    className="w-4 h-4 sm:w-6 sm:h-6 rounded-full object-cover"
+                                                    className="w-5 h-5 sm:w-6 sm:h-6"
                                                 />
                                                 <span className='text-lg sm:text-xl capitalize'>{s.name}</span>
                                             </div>
                                         </AnimatedUnderline>
                                     </div>
                                 ))}
-                            </div>
-                            <Link
-                                to='/login'
-                                className="bg-green-600 relative h-full w-full rounded-2xl group flex gap-4 justify-center items-center overflow-hidden px-3 sm:py-1.5"
+                            </motion.div>
+                            <motion.div
+                                initial={{ y: 100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: 500, opacity: 0 }}
+                                transition={{ duration: 1.5, delay: 0, ease: "easeInOut" }}
+                                className="h-full w-full rounded-2xl relative overflow-hidden section-bsg bg-red-950"
                             >
-                                <span className="text-nowdrap font-semibold text-white text-[30px] sm:text-[40px]">Sign in</span>
                                 <div
-                                    className={`p-5 sm:p-7.5 rounded-full text-[1.7rem] sm:text-[2rem] shadow-md flex items-center justify-center relative overflow-hidden bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-red-950`}
-                                    aria-hidden={false}
+                                    aria-hidden="true"
+                                    className="gradient-bg absolute -bottom-15 -right-10 sm:-bottom-40 sm:-right-10 w-30 h-30 sm:w-70 sm:h-70 rounded-full blur-2xl opacity-40"
+                                />
+                                <Link
+                                    to='/login'
+                                    className="z-10 relative h-full w-full rounded-2xl group flex gap-4 justify-center items-center overflow-hidden px-3 sm:py-1.5"
                                 >
-                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
-                                        <span className={originalIconCls}>
-                                            <IoArrowForward className={``} />
-                                        </span>
+                                    <span className="text-nowdrap font-semibold text-white text-[30px] sm:text-[40px]">Sign in</span>
+                                    <div
+                                        className={`p-5 sm:p-7.5 rounded-full text-[1.7rem] sm:text-[2rem] shadow-md flex items-center justify-center relative overflow-hidden bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-red-950`}
+                                        aria-hidden={false}
+                                    >
+                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
+                                            <span className={originalIconCls}>
+                                                <IoArrowForward className={``} />
+                                            </span>
+                                        </div>
+                                
+                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                            <span className={incomingIconCls}>
+                                                <IoArrowForward className={``} />
+                                            </span>
+                                        </div>
                                     </div>
-                            
-                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                        <span className={incomingIconCls}>
-                                            <IoArrowForward className={``} />
-                                        </span>
-                                    </div>
-                                </div>
-                            </Link>
+                                </Link>
+                            </motion.div>
                         </div>
-
-
 
 
                         {/** 
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-                            {cfg.map((c, i) => (
-                            <motion.div
-                                key={i}
-                                drag={c.drag}
-                                dragConstraints={{ top: -20, bottom: 20, left: -10, right: 10 }}
-                                initial={{ y: c.translate, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: c.translate, opacity: 0 }}
-                                transition={{ duration: c.duration, delay: c.delay, ease: "easeOut" }}
-                                className={`rounded-xl p-6 ${c.bg} text-white min-h-[8rem] flex items-center justify-center`}
-                            >
-                                <div className="text-center">
-                                <div className="font-semibold text-lg">Box {i + 1}</div>
-                                <div className="text-sm opacity-90">drag: {String(Boolean(c.drag))}</div>
-                                </div>
-                            </motion.div>
-                            ))}
-                        </div>
-
                         <div className="mt-8 text-sm opacity-80">
                             Press <kbd className="px-2 py-1 bg-white/10 rounded">Esc</kbd> to close
                         </div>*/}

@@ -93,6 +93,7 @@ export default function Industries() {
   }, []);
 
   const mx = `${6 * progress}%`;
+  const my = `${15 * progress}%`;
   return (
     <section
       className="relative"
@@ -104,7 +105,9 @@ export default function Industries() {
       />
       <div
         ref={ref}
-        style={{ marginLeft: mx, marginRight: mx, transition: "margin 150ms linear",}}
+        style={{ 
+          marginLeft: mx, marginRight: mx, marginTop:my, transition: "margin 120ms linear",}
+        }
         className="relative overflow-hidden section-bg section-l-p section-r-p py-12 lg:py-20 rounded-xl"
       >
         {/* corner glows (pointer-events-none so they don't intercept clicks) */}
@@ -129,7 +132,7 @@ export default function Industries() {
               <Link
                 to={`/${it.slug}`}
                 key={it.title}
-                className="rounded-xl bg-[#272525] p-6 md:p-10 cursor-pointer flex flex-col gap-8"
+                className="rounded-lg bg-[#272525] p-6 md:p-10 cursor-pointer flex flex-col gap-8"
               >
                 <div className="text-7xl text-[#f5f9f5]">{it.icon}</div>{/** 
                 <div className="w-full overflow-hidden rounded-md">

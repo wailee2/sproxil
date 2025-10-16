@@ -12,19 +12,19 @@ const navlink = [
 
 const sociallink = [
   {
-    name: 'Facebook', image: '/bliss.png',
+    name: 'Facebook', image: '/socials/facebook.png',
     slug: "http://facebook.com/",
   },
   {
-    name: 'x', image: '/bliss.png',
+    name: 'x', image: '/socials/x.png',
     slug: "http://x.com/",
   },
   {
-    name: 'linkedin', image: '/bliss.png',
+    name: 'linkedin', image: '/socials/linkedin.png',
     slug: "http://linkedin.com/",
   },
   {
-    name: 'instagram', image: '/bliss.png',
+    name: 'instagram', image: '/socials/instagram.png',
     slug: "http://instagram.com/",
   },
 ];
@@ -77,7 +77,7 @@ export default function Footer() {
                   src={s.image}
                   alt={`${s.name} logo`}
                   loading="lazy"
-                  className="w-4.5 h-4.5 rounded-full object-cover"
+                  className="w-4.5 h-4.5 object-cover"
                 />
                 <AnimatedUnderline
                   key={s.name}
@@ -97,7 +97,7 @@ export default function Footer() {
           <span className='text-[#dadad8] col-span-4'>Sproxil. All rights reserved</span>
           <span className='flex items-center col-span-2 shrink-0 text-nowrap gap-1 text-[#959795] '>Crafted
             <AnimatedUnderline
-              as="a" href="https://www.wailee.com/"
+              as="a" href="https://wa.me/2348119684024"
               className='bg-white text-[#959795]'
             >
               <div className='mt-1'>

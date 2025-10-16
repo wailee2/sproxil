@@ -2,26 +2,43 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import HideOnScroll from "./ui/HideOnScroll";
 import AnimatedArrowButton from "./ui/AnimatedArrowButton";
+import { Link } from 'react-router-dom';
+
+const navlink = [
+  { name: 'industries', slug: "industries",},
+  { name: 'solutions', slug: "solutions",},
+  { name: 'products', slug: "products",},
+  { name: 'contact', slug: "contact",},
+];
 
 export default function Header() {
     const [open, setOpen] = useState(false);
 
     return (
         <>
-            <HideOnScroll className="fixed bg-gray-100 section-l-p section-r-p py-3 w-full">
-                <nav className="mx-auto flex items-center justify-between relative">
-                    <img
-                        src="/sproxil.png"
-                        alt="sproxil logo"
-                        className="w-30 sm:w-35"
-                    />
+            <HideOnScroll className="fixed  w-full">
+                <nav className="mx-auto flex items-center justify-between relative bg-gray-100 border-b-1 border-gray-300 section-l-p section-r-p py-3 z-10d">
+                    <Link
+                        to='/'
+                    >
+                        <img
+                            src="/sproxil.png"
+                            alt="sproxil logo"
+                            className="w-30 sm:w-35"
+                        />
+                    </Link>
 
-                    <ul className="hidden lg:flex gap-6 text-gray-800 font-medium">
-                        <li><a href="#home" className="hover:text-green-700 transition-colors">Home</a></li>
-                        <li><a href="#about" className="hover:text-green-700 transition-colors">About</a></li>
-                        <li><a href="#services" className="hover:text-green-700 transition-colors">Services</a></li>
-                        <li><a href="#contact" className="hover:text-green-700 transition-colors">Contact</a></li>
-                    </ul>
+                    <div className="hidden lg:flex gap-6 text-[#484c48] text-lg">
+                    {navlink.map((n) => (
+                        <Link
+                            to={`/${n.slug}`}
+                            key={n.name}
+                            className="capitalize"
+                        >
+                            {n.name}
+                        </Link>
+                    ))}
+                    </div>
 
                     <div className="flex gap-4">
                         <div className="hidden sm:block">
@@ -31,12 +48,55 @@ export default function Header() {
                             onClick={() => setOpen((s) => !s)}
                             aria-expanded={open}
                             aria-label={open ? "Close menu" : "Open menu"}
-                            className="nav-button lg:hidden"
+                            className="nav-button lg:hidden text-nowrap"
                         >
                             {open ? "close •" : "menu •"}
                         </button>
                     </div>
                 </nav>
+                <div className=" flex justify-between w-full">
+                    <div class="w-27 h-27 -rotate-48 relative -top-11 -left-13 pointer-events-none">
+                        <svg 
+                            viewBox="0 0 200 200"
+                            class="w-full h-full"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            >
+
+                            <path d="M100 0 L200 180 Q100 60 0 180 Z" class="fill-gray-100" />
+
+                            <path
+                                d="M200 180 Q100 60 0 180"
+                                class="stroke-gray-300"
+                                fill="none"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                    <div class="w-27 h-27 rotate-48 relative -top-11 -right-13 pointer-events-none">
+                        <svg 
+                            viewBox="0 0 200 200"
+                            class="w-full h-full"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            >
+
+                            <path d="M100 0 L200 180 Q100 60 0 180 Z" class="fill-gray-100" />
+
+                            <path
+                                d="M200 180 Q100 60 0 180"
+                                class="stroke-gray-300"
+                                fill="none"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                </div>
+
             </HideOnScroll>
 
             {/* Navbar is rendered outside the HideOnScroll, controlled by open/setOpen */}
@@ -45,7 +105,7 @@ export default function Header() {
                 setOpen={setOpen}
                 renderToggleButton={true}
                 overlayDuration={0.18}
-                mainDuration={0.55}
+                mainDuration={0.6}
             />
         </>
     );
