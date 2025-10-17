@@ -15,7 +15,7 @@ export default function Header() {
     const [open, setOpen] = useState(false);
 
     return (
-        <>
+        <header>
             <HideOnScroll className="fixed  w-full">
                 <nav className="mx-auto flex items-center justify-between relative bg-gray-100 border-b-1 border-gray-300 section-l-p section-r-p py-3">
                     <Link
@@ -109,6 +109,6 @@ export default function Header() {
                 overlayDuration={0.18}
                 mainDuration={0.6}
             />
-        </>
+        </header>
     );
 }
