@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navmenu from "./Navmenu";
 import HideOnScroll from "./ui/HideOnScroll-with-Lenis.jsx";
 import AnimatedArrowButton from "./ui/AnimatedArrowButton";
 import { Link } from 'react-router-dom';
@@ -101,8 +101,8 @@ export default function Header() {
 
             </HideOnScroll>
 
-            {/* Navbar is rendered outside the HideOnScroll, controlled by open/setOpen */}
-            <Navbar 
+            {/* Navmenu is rendered outside the HideOnScroll, controlled by open/setOpen */}
+            <Navmenu
                 open={open}
                 setOpen={setOpen}
                 renderToggleButton={true}

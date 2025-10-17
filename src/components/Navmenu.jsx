@@ -32,7 +32,7 @@ const sociallink = [
   },
 ];
 
-export default function Navbar({
+export default function Navmenu({
     open = false,          // controlled open state
     setOpen = () => {},    // setter from parent
     renderToggleButton = false, // default: 

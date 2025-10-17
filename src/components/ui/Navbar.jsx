@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Navbar() {
+export default function Navmenu() {
   const [open, setOpen] = useState(false);
   return (
     <header className="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
