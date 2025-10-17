@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimatedArrowButton from './ui/AnimatedArrowButton';
-import RevealAll from './ui/RevealAll';
 import HeadlineReveal from './ui/TextReveal';
+import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
@@ -22,9 +22,16 @@ export default function Hero() {
                     className=""
                 />
                 <div className='flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-7.5 lg:mt-9 gap-4'>
-                    <div className="">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.7 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            duration: 2,
+                            ease: "easeOut"
+                        }}
+                    >
                         <AnimatedArrowButton label="Get Started" to="#contact" />
-                    </div>
+                    </motion.div>
                     <HeadlineReveal
                         tag="p"
                         text="Secure product verification, protect supply chains, and turn each mobile scan into a trusted connection between your brand and customers."
