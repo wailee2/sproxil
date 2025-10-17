@@ -56,7 +56,7 @@ export default function Header() {
                         </button>
                     </div>
                 </nav>
-                <div className=" flex justify-between w-full">
+                <div className=" flex justify-between w-full pointer-events-none">
                     <div class="w-27 h-27 -rotate-48 relative -top-11 -left-13 pointer-events-none">
                         <svg 
                             viewBox="0 0 200 200"

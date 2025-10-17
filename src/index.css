@@ -18,6 +18,7 @@ h2{
 }
 
 
+
 .text-fluid-body {
     font-size: clamp(1rem, .8571rem + .7143vi, 1.5rem);
 }
