@@ -8,12 +8,14 @@ import Partners from './components/Partners';
 import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import GsapParallax from './components/ui/ParallaxGSAP';
+import FramerParallax from './components/ui/ParallaxFramer';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100 text-black sansation-regular">
+    <div className="min-h-screen flex flex-col bg-gray-100 text-black sansation-regular ">
       <Header />
-      <main className=" flex-grow">
+      <main className="  relatnive z-11 overflow-x-hidden bg-gray-100">
         <Hero />
         <Industries />
         <Services />

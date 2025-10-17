@@ -19,6 +19,7 @@ export function LenisProvider({ children, options = {} }) {
       duration: 1.2,
       smooth: true,
       smoothWheel: true,
+      allowNestedScroll: true,
       ...options,
     });
     lenisRef.current = lenis;

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 /**
  * HideOnScroll
- * React + Tailwind v4 component
  * - Stays fixed at the top (top-0)
  * - Hides when scrolling DOWN and shows when scrolling UP by default
  * - Pass invert={true} to reverse behaviour (hide on UP, show on DOWN)

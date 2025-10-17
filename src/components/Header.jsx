@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import HideOnScroll from "./ui/HideOnScroll";
+import HideOnScroll from "./ui/HideOnScroll-with-Lenis.jsx";
 import AnimatedArrowButton from "./ui/AnimatedArrowButton";
 import { Link } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ export default function Header() {
     return (
         <>
             <HideOnScroll className="fixed  w-full">
-                <nav className="mx-auto flex items-center justify-between relative bg-gray-100 border-b-1 border-gray-300 section-l-p section-r-p py-3 z-10d">
+                <nav className="mx-auto flex items-center justify-between relative bg-gray-100 border-b-1 border-gray-300 section-l-p section-r-p py-3">
                     <Link
                         to='/'
                     >

@@ -82,13 +82,14 @@ export default function Navbar({
                     transition={{ duration: mainDuration, ease: "easeInOut", delay: overlayDuration }}
                     className="fixed top-0 left-0 right-0 bottom-0 z-60 h-screen max-h-screen overflow-auto bg-[#0f0a0a] text-white rounded-none shadow-2xl"
                 >
-                    <div className=" mx-auto p-4 gap-4 w-full h-full flex flex-col sm:flex-row  min-h-0 overflow-y-auto">
+                    <div className=" mx-auto p-4 gap-4 w-full h-full flex flex-col sm:flex-row min-h-0 overflow-y-auto">
                         <motion.div
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: 100, opacity: 1}}
                             transition={{ duration: 1.5, delay: 0, ease: "easeOut" }}
-                            className="bg-white py-4 px-8 sm:px-14 sm:w-1/2 h-1/2 rounded-2xl flex flex-col justify-between min-h-0 overflow-auto"
+                            className="bg-white py-4 px-8 sm:px-10 sm:w-1/2 h-1/2 sm:h-full rounded-2xl flex flex-col justify-between min-h-0 overflow-auto"
+                            data-lenis-prevent
                         >
                             <span className="text-sm sm:text-xl font-semibold text-black">Navigation</span>
                             {navlink.map((n) => (
@@ -103,13 +104,14 @@ export default function Navbar({
                                 </Link>
                             ))}
                         </motion.div>
-                        <div className="flex flex-col sm:w-1/2 h-1/2 gap-4 min-h-0">
+                        <div className="flex flex-col sm:w-1/2 h-1/2 sm:h-full gap-4 min-h-0">
                             <motion.div
                                 initial={{ y: 100, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 300, opacity: 0}}
                                 transition={{ duration: 1.5, delay: 0, ease: "easeInOut" }}
                                 className="bg-white flex flex-col justify-between py-4 px-8 sm:px-14 md:px-20 rounded-2xl w-full h-full min-h-0n overflow-auto"
+                                data-lenis-prevent
                             >
                                 <div className="mb-1.5">
                                     <span className="text-2xl sm:text-[32px] font-semibold text-black">Our Socials</span>
