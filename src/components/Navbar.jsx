@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedUnderline from './ui/AnimatedUnderline';
-import AnimatedArrowButton from './ui/AnimatedArrowButton';
 import { IoArrowForward } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-import HideOnScroll from "./ui/HideOnScroll";
+import HideOnScroll from "./ui/HideOnScroll-with-Lenis";
 
 const navlink = [
   { name: 'home', slug: ""},
