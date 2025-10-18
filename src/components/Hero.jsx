@@ -55,7 +55,6 @@ export default function Hero() {
                         2xl:rounded-tl-[27rem] 2xl:rounded-tr-[5rem] 2xl:rounded-bl-[5rem] 2xl:rounded-br-[27rem] 
                     "
                 />
-                
             </div>
         </section>
     );
