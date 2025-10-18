@@ -78,7 +78,6 @@ export default function Footer() {
                   alt={s.name}
                   width={18}
                   height={18}
-                  decoding="async"
                   loading="lazy"
                   className="w-6 h-6 object-cover mb-1"
                 />
