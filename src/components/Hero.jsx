@@ -40,7 +40,7 @@ export default function Hero() {
                         distance={60}
                         delay={0.1}
                         triggerOnView
-                        className="text-fluid-body text-balance max-w-md"
+                        className="text-fluid-body text-balance max-w-md sm:max-w-[27rem] md:max-w-[30rem] lg:max-w-lg"
                     />
                     
                 </div>
