@@ -15,19 +15,19 @@ const navlink = [
 
 const sociallink = [
   {
-    name: 'Facebook', image: '/socials/Facebook.png',
+    name: 'Facebook', image: '/socials/facebook.png',
     slug: "http://facebook.com/",
   },
   {
-    name: 'x', image: '/socials/X.png',
+    name: 'x', image: '/socials/x.png',
     slug: "http://x.com/",
   },
   {
-    name: 'linkedin', image: '/socials/LinkedIn.png',
+    name: 'linkedin', image: '/socials/linkedin.png',
     slug: "http://linkedin.com/",
   },
   {
-    name: 'instagram', image: '/socials/Instagram.png',
+    name: 'instagram', image: '/socials/instagram.png',
     slug: "http://instagram.com/",
   },
 ];
