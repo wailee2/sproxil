@@ -140,7 +140,8 @@ export default function Industries() {
               <Link
                 to={`/${it.slug}`}
                 key={it.title}
-                className="rounded-lg overflow-hidden relative bg-[#201313] px-6 py-10 md:px-8 md:py-12 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
+                className="
+                  rounded-lg overflow-hidden relative bg-[#201313] px-6 py-10 md:px-8 md:py-12 cursor-pointer flex flex-col gap-8 hover:shadow-lg group  transition-transform duration-300"
                 
               >
                 <img
@@ -148,7 +149,7 @@ export default function Industries() {
                   loading="lazy"
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-120 transition-transform duration-500"
                 />
                 <div className="absolute top-0 inset-0 bg-[#5c0101]/50 pointer-events-none "/>
                 <div className="relative z-10 h-full">
