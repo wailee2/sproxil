@@ -1,6 +1,6 @@
 import React from 'react';
 import AnimatedArrowButton from './ui/AnimatedArrowButton';
-import HeadlineReveal from './ui/TextReveal';
+import TextReveal from './ui/TextReveal';
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -11,7 +11,7 @@ export default function Hero() {
                 className="gradient-bg absolute top-5 lg:top-10 -right-70 w-100 h-90 md:w-130 md:h-110 rounded-full blur-3xl opacity-50"
             />
             <div className="mx-auto pb-12 md:pb-10 lg:pb-11 xl:pb-8  relative z-10">
-                <HeadlineReveal
+                <TextReveal
                     tag="h1"
                     text="We help brands build trust and loyalty."
                     duration={0.8}
@@ -32,7 +32,7 @@ export default function Hero() {
                     >
                         <AnimatedArrowButton label="Get Started" to="#contact" />
                     </motion.div>
-                    <HeadlineReveal
+                    <TextReveal
                         tag="p"
                         text="Secure product verification, protect supply chains, and turn each mobile scan into a trusted connection between your brand and customers."
                         duration={0.8}

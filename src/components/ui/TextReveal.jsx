@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 /**
  * TextReveal — clip-path version to avoid layout jumps
  * 
- * <HeadlineReveal
+ * <TextReveal
       tag="h1"
       text="We help you start real companies"
       duration={0.8}

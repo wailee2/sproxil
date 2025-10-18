@@ -8,8 +8,6 @@ import Partners from './components/Partners';
 import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import GsapParallax from './components/ui/ParallaxGSAP';
-import FramerParallax from './components/ui/ParallaxFramer';
 
 export default function App() {
   return (
