@@ -16,8 +16,8 @@ export default function Header() {
 
     return (
         <header>
-            <HideOnScroll className="fixed w-full">
-                <nav className="mx-auto flex items-center justify-between relative bg-gray-100 border-b-1 border-gray-300 section-l-p section-r-p py-3">
+            <HideOnScroll className="fixed w-full bg-transparent section-l-p section-r-p">
+                <nav className="mx-auto flex items-center justify-between w-full top-5 rounded-[1rem] relative bg-gray-100 backdrop-blur-3xl  py-3 px-3.5">
                     <Link
                         to='/'
                     >
@@ -56,6 +56,8 @@ export default function Header() {
                         </button>
                     </div>
                 </nav>
+
+                {/**curved background shapes
                 <div className=" flex justify-between w-full pointer-events-none">
                     <div class="w-27 h-27 -rotate-48 relative -top-11 -left-13 pointer-events-none">
                         <svg 
@@ -97,7 +99,7 @@ export default function Header() {
                             />
                         </svg>
                     </div>
-                </div>
+                </div> */}
 
             </HideOnScroll>
 
