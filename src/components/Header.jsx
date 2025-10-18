@@ -17,7 +17,7 @@ export default function Header() {
     return (
         <header>
             <HideOnScroll className="fixed w-full bg-transparent section-l-p section-r-p">
-                <nav className="mx-auto flex items-center justify-between w-full top-5 rounded-[1rem] relative bg-gray-100 backdrop-blur-3xl  py-3 px-3.5">
+                <nav className="mx-auto flex items-center justify-between w-full top-5 rounded-[1rem] relative bg-gray-100 backdrop-blur-3xl  py-4 px-5">
                     <Link
                         to='/'
                     >
