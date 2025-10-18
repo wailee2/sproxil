@@ -12,19 +12,19 @@ const navlink = [
 
 const sociallink = [
   {
-    name: 'Facebook', image: '/socials/facebook.png',
+    name: 'Facebook', image: '/socials/Facebook.png',
     slug: "http://facebook.com/",
   },
   {
-    name: 'x', image: '/socials/x.png',
+    name: 'X', image: '/socials/X.png',
     slug: "http://x.com/",
   },
   {
-    name: 'linkedin', image: '/socials/linkedin.png',
+    name: 'linkedin', image: '/socials/LinkedIn.png',
     slug: "http://linkedin.com/",
   },
   {
-    name: 'instagram', image: '/socials/instagram.png',
+    name: 'instagram', image: '/socials/Instagram.png',
     slug: "http://instagram.com/",
   },
 ];
@@ -75,9 +75,12 @@ export default function Footer() {
               <div className='flex items-center gap-1.5'>
                 <img
                   src={s.image}
-                  alt={`${s.name} logo`}
+                  alt={s.name}
+                  width={18}
+                  height={18}
+                  decoding="async"
                   loading="lazy"
-                  className="w-4.5 h-4.5 object-cover mb-1"
+                  className="w-6 h-6 object-cover mb-1"
                 />
                 <AnimatedUnderline
                   key={s.name}

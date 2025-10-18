@@ -31,8 +31,8 @@ export default function AnimatedUnderline({
   className = "bg-red-500",
   color = 'currentColor',
   thickness = 2,
-  durationEnter = 400,
-  durationExit = 270,
+  durationEnter = 1000,
+  durationExit = 500,
   ...rest
 }) {
   const Tag = as
@@ -88,7 +88,7 @@ export default function AnimatedUnderline({
         aria-hidden
         onTransitionEnd={onUnderlineTransitionEnd}
         style={underlineStyle}
-        className={`pointer-events-none absolute left-0 bottom-1 w-full ${className} h-[var(--underline-thickness)] bg-[var(--underline-color)] transform will-change-transform`}
+        className={`pointer-events-none rounded-full absolute left-0 bottom-1 w-full ${className} h-[var(--underline-thickness)] bg-[var(--underline-color)] transform will-change-transform`}
       />
     </Tag>
   )

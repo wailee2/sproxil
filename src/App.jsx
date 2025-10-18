@@ -13,9 +13,9 @@ import FramerParallax from './components/ui/ParallaxFramer';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100 text-black sansation-regular ">
+    <div className=" bg-gray-100 text-black sansation-regular ">
       <Header />
-      <main className="  relatnive z-11 overflow-x-hidden bg-gray-100">
+      <main className="min-h-screen flex flex-col z-11 overflow-x-hidden bg-gray-100">
         <Hero />
         <Industries />
         <Services />

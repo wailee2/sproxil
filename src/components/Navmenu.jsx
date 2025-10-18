@@ -15,19 +15,19 @@ const navlink = [
 
 const sociallink = [
   {
-    name: 'Facebook', image: '/socials/facebook.png',
+    name: 'Facebook', image: '/socials/Facebook.png',
     slug: "http://facebook.com/",
   },
   {
-    name: 'x', image: '/socials/x.png',
+    name: 'x', image: '/socials/X.png',
     slug: "http://x.com/",
   },
   {
-    name: 'linkedin', image: '/socials/linkedin.png',
+    name: 'linkedin', image: '/socials/LinkedIn.png',
     slug: "http://linkedin.com/",
   },
   {
-    name: 'instagram', image: '/socials/instagram.png',
+    name: 'instagram', image: '/socials/Instagram.png',
     slug: "http://instagram.com/",
   },
 ];
@@ -123,12 +123,15 @@ export default function Navmenu({
                                             href={s.slug}
                                             className=' bg-black'
                                         >
-                                            <div className="flex items-center gap-3 mb-1">
+                                            <div className="flex items-center gap-2">
                                                 <img
                                                     src={s.image}
-                                                    alt={`${s.name} logo`}
+                                                    alt={s.name}
+                                                    width={20}
+                                                    height={20}
+                                                    decoding="async"
                                                     loading="lazy"
-                                                    className="w-5 h-5 sm:w-6 sm:h-6"
+                                                    className="w-6 h-6 sm:w-6 sm:h-6"
                                                 />
                                                 <span className='text-lg sm:text-xl capitalize'>{s.name}</span>
                                             </div>
@@ -141,7 +144,7 @@ export default function Navmenu({
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 500, opacity: 0 }}
                                 transition={{ duration: 1.5, delay: 0, ease: "easeInOut" }}
-                                className="h-full w-full rounded-2xl relative overflow-hidden section-bsg bg-red-950"
+                                className="h-full w-full rounded-2xl relative overflow-hidden bg-red-950"
                             >
                                 <div
                                     aria-hidden="true"
