@@ -131,7 +131,7 @@ export default function Navmenu({
                                                     height={24}
                                                     decoding="async"
                                                     loading="lazy"
-                                                    className="w-6 h-6 sm:w-6 sm:h-6"
+                                                    className="w-6 h-6 sm:w-7 sm:h-7"
                                                 />
                                                 <span className='text-lg sm:text-xl capitalize'>{s.name}</span>
                                             </div>

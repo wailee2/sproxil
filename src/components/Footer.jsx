@@ -79,6 +79,7 @@ export default function Footer() {
                   width={18}
                   height={18}
                   loading="lazy"
+                  decoding="async"
                   className="w-6 h-6 object-cover mb-1"
                 />
                 <AnimatedUnderline

@@ -140,7 +140,7 @@ export default function Industries() {
               <Link
                 to={`/${it.slug}`}
                 key={it.title}
-                className="rounded-lg overflow-hidden relative bg-[#201313] bg-[url('/industries/cosmetics.jpg')] bg-cover bg-center p-6 md:px-8 md:pt-12 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
+                className="rounded-lg overflow-hidden relative bg-[#201313] bg-[url('/industries/cosmetics.jpg')] bg-cover bg-center px-6 py-10 md:px-8 md:py-12 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
               >
                 <div className="absolute top-0 inset-0 bg-black/50 pointer-events-none "></div>
                 <div className="relative z-10 h-full">
