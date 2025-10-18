@@ -127,8 +127,8 @@ export default function Navmenu({
                                                 <img
                                                     src={s.image}
                                                     alt={s.name}
-                                                    width={20}
-                                                    height={20}
+                                                    width={24}
+                                                    height={24}
                                                     decoding="async"
                                                     loading="lazy"
                                                     className="w-6 h-6 sm:w-6 sm:h-6"
