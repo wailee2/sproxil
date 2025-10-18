@@ -119,7 +119,6 @@ export default function Industries() {
           willChange: "transform",
         }}
       >
-        {/* corner glows (pointer-events-none so they don't intercept clicks) */}
         <div
           aria-hidden="true"
           className="gradient-bg absolute -top-36 -right-16 lg:-right-36 w-100 h-100 lg:w-130 lg:h-110 rounded-full blur-3xl opacity-55"
@@ -141,17 +140,9 @@ export default function Industries() {
               <Link
                 to={`/${it.slug}`}
                 key={it.title}
-                className="rounded-lg bg-[#272525] p-6 md:p-10 cursor-pointer flex flex-col gap-8"
+                className="rounded-lg bg-[#201313] p-6 md:p-8 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
               >
-                <div className="text-7xl text-[#f5f9f5]">{it.icon}</div>{/** 
-                <div className="w-full overflow-hidden rounded-md">
-                  <img
-                    src={it.image}
-                    alt={`${it.title} illustration`}
-                    loading="lazy"
-                    className="w-20 xl:w-24 object-cover"
-                  />
-                </div>*/}
+                <div className="text-7xl text-[#f5f9f5]">{it.icon}</div>
                 <div className="flex flex-col gap-3">
                   <h3 className="text-[22px] md:text-[28px] font-medium text-[#f5f9f5]">{it.title}</h3>
                   <p className="text-[#a7aaa7] text-[16px] md:text-[18px] xl:text-[20px]">{it.desc}</p>

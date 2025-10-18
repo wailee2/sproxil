@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className=" section-l-p section-r-p pt-30 sm:pt-52 lg:pt-52 relative overflow-hidden">
+        <section className=" section-l-p section-r-p pt-35 sm:pt-52 lg:pt-52 relative overflow-hidden">
             <div
                 aria-hidden="true"
                 className="gradient-bg absolute top-5 lg:top-10 -right-70 w-100 h-90 md:w-130 md:h-110 rounded-full blur-3xl opacity-50"

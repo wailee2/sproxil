@@ -43,14 +43,14 @@ export default function Services() {
         <div className="mt-12 grid grid-cols-1 ">
           {services.map((s) => (
             <div className='flex justify-between'>
-              <div></div>
+              <div className='pointer-events-none'></div>
               <Link
                 to={`/${s.slug}`}
                 key={s.name}
-                className="space-y-6 md:space-y-0 xl:w-[65%] 2xl:w-[55%] py-6 md:flex md:gap-x-20 items-center justify-between border-b-1 border-gray-200"
+                className="md:flex lg:gap-x-15 items-center justify-between space-y-6 md:space-y-0 w-full lg:w-[77%] xl:w-[65%] 2xl:w-[55%] py-6 border-t-1 border-gray-200 hover:scale-103 hover:-translate-y-3 transition-transform duration-300 bbg-amber-600"
               >
                 <div className="flex items-center gap-3">
-                  <div className='w-10 h-10 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400'></div>
+                  <div className='w-10 h-10 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400'/>
                   <h3 className="font-semibold text-2xl uppercase">{s.name}</h3>
                 </div>
                 <p className="text-lg text-[#484648] md:max-w-sm xl:max-w-md">{s.desc}</p>
