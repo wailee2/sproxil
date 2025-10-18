@@ -150,7 +150,7 @@ export default function Industries() {
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 />
-                <div className="absolute top-0 inset-0 bg-black/50 pointer-events-none "></div>
+                <div className="absolute top-0 inset-0 bg-[#5c0101]/50 pointer-events-none "/>
                 <div className="relative z-10 h-full">
                   <div className="flex flex-col gap-3">
                     <h3 className="text-[22px] md:text-[28px] font-medium text-[#f5f9f5]">{it.title}</h3>
