@@ -15,42 +15,42 @@ const items = [
     title: "Donors",
     desc: "Empowering NGOs with data needed to optimize distribution and make impact.",
     slug: "donors",
-    image: "/images/industries/donors.jpg",
+    image: "/industries/donors.jpg",
     icon: <BiSolidDonateHeart />,
   },
   {
     title: "Pharma",
     desc: "Protecting drug authenticity and patient safety with anti-counterfeit solutions.",
     slug: "pharma",
-    image: "/images/industries/pharma.jpg",
+    image: "/industries/pharma.jpg",
     icon: <LuBriefcaseMedical />,
   },
   {
     title: "Beverage",
     desc: "Ensuring beverage authenticity and driving consumer engagement.",
     slug: "beverage",
-    image: "/images/industries/beverage.jpg",
+    image: "/industries/beverage.jpg",
     icon: <RiDrinks2Line />,
   },
   {
     title: "FMCG",
     desc: "Safeguarding supply chains and enhancing brand loyalty within the FMCG sector.",
     slug: "fmcg",
-    image: "/images/industries/fmcg.jpg",
+    image: "/industries/fmcg.jpg",
     icon: <RiUserCommunityFill />,
   },
   {
     title: "Cosmetics",
     desc: "Securing cosmetic brands with reliable product verification solution.",
     slug: "cosmetics",
-    image: "/images/industries/cosmetics.jpg",
+    image: "industries/cosmetics.jpg",
     icon: <HiOutlinePaintBrush />,
   },
   {
     title: "Automotive",
     desc: "Authenticating automotive parts for safety and quality assurance to improve loyalty.",
     slug: "automotive",
-    image: "/images/industries/automotive.jpg",
+    image: "/industries/automotive.jpg",
     icon: <FaCarAlt />,
   },
 ];
@@ -140,7 +140,10 @@ export default function Industries() {
               <Link
                 to={`/${it.slug}`}
                 key={it.title}
-                className="rounded-lg overflow-hidden relative bg-[#201313] bg-[url('/industries/cosmetics.jpg')] bg-cover bg-center px-6 py-10 md:px-8 md:py-12 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
+                className="rounded-lg overflow-hidden relative bg-[#201313] bg-cover bg-center px-6 py-10 md:px-8 md:py-12 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
+                style={{
+                  backgroundImage: `url(${it.image})`,
+                }}
               >
                 <div className="absolute top-0 inset-0 bg-black/50 pointer-events-none "></div>
                 <div className="relative z-10 h-full">

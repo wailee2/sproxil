@@ -68,43 +68,6 @@ export default function Testimonial() {
           <h2 className="max-w-2xl text-black"> Hear it from our customers.</h2>
         </div>
 
-        {/* Static grid of testimonial cards (responsive). 
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
-          {quotes.map((q) => (
-            <article
-              key={q.name}
-              className="bg-white p-6 rounded-2xl shadow-md border border-gray-100"
-              aria-labelledby={`t-${q.name.replace(/\s /g, '-')}`}
-            >
-              <div className="flex items-start gap-4">
-                <img
-                  src={q.image}
-                  alt={`${q.name} avatar`}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-green-200"
-                  loading="lazy"
-                />
-                <div>
-                  <h3 id={`t-${q.name.replace(/\s /g, '-')}`} className="font-semibold">
-                    {q.name}
-                  </h3>
-                  <p className="text-sm mt-1 text-gray-600">{q.role}</p>
-                </div>
-              </div>
-
-              <blockquote className="mt-4 text-gray-800 italic">“{q.quote}”</blockquote>
-
-              <div className="mt-4">
-                <button
-                  className="text-sm font-medium px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 hover:scale-105 transition-transform duration-150"
-                  aria-label={`Contact ${q.name}`}
-                >
-                  View story
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>*/}
-
         <div className=''>
           {/* Animated stacked cards using CardSwap. These will use the same `quotes` array. */}
           <div className=" h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] relative overflow-hidden lg:overflow-visible" >
