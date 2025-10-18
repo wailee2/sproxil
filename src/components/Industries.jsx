@@ -140,12 +140,14 @@ export default function Industries() {
               <Link
                 to={`/${it.slug}`}
                 key={it.title}
-                className="rounded-lg bg-[#201313] p-6 md:p-8 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
+                className="rounded-lg overflow-hidden relative bg-[#201313] bg-[url('/industries/cosmetics.jpg')] bg-cover bg-center p-6 md:px-8 md:pt-12 cursor-pointer flex flex-col gap-8 hover:shadow-lg hover:-translate-y-3 transition-transform duration-300"
               >
-                <div className="text-7xl text-[#f5f9f5]">{it.icon}</div>
-                <div className="flex flex-col gap-3">
-                  <h3 className="text-[22px] md:text-[28px] font-medium text-[#f5f9f5]">{it.title}</h3>
-                  <p className="text-[#a7aaa7] text-[16px] md:text-[18px] xl:text-[20px]">{it.desc}</p>
+                <div className="absolute top-0 inset-0 bg-black/50 pointer-events-none "></div>
+                <div className="relative z-10 h-full">
+                  <div className="flex flex-col gap-3">
+                    <h3 className="text-[22px] md:text-[28px] font-medium text-[#f5f9f5]">{it.title}</h3>
+                    <p className="text-[#d3d3d3] text-[16px] md:text-[18px] xl:text-[20px]">{it.desc}</p>
+                  </div>
                 </div>
               </Link>
             ))}
